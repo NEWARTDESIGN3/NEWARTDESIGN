@@ -3,85 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>NewArt Design</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- FONTES PROFISSIONAIS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#fff;
-  --text:#111;
-  --sub:#555;
-  --card:#f2f2f2;
+:root{
+  --bg:#ffffff;
+  --text:#111111;
+  --sub:#444;
+  --card:#f3f3f3;
 }
-body.dark {
+body.dark{
   --bg:#0f0f0f;
   --text:#f5f5f5;
   --sub:#aaa;
-  --card:#1b1b1b;
+  --card:#1c1c1c;
 }
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 html{scroll-behavior:smooth}
+
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter',sans-serif;
+  font-family:"Ruda", sans-serif;
   transition:.4s;
 }
 
 /* HEADER */
 header{
+  width:100%;
+  padding:20px 60px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:20px 50px;
+  justify-content:space-between;
 }
-.logo img{height:90px}
-nav{display:flex;gap:40px}
-nav a{text-decoration:none;color:var(--text);font-weight:500}
-.toggle{cursor:pointer}
+
+.logo img{
+  height:120px;
+}
+
+nav{
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-family:"Archivo Black", sans-serif;
+  text-transform:uppercase;
+  font-size:.95rem;
+}
+
+.toggle{
+  cursor:pointer;
+  font-size:1.2rem;
+}
 
 /* HERO */
 .hero{
   max-width:1100px;
-  margin:100px auto;
+  margin:120px auto;
   padding:0 40px;
 }
+
 .hero h1{
-  font-family:'Archivo',sans-serif;
+  font-family:"Archivo Black", sans-serif;
   font-size:4rem;
   text-transform:uppercase;
 }
+
 .hero p{
-  max-width:700px;
-  margin-top:20px;
+  margin-top:25px;
+  max-width:720px;
   font-size:1.2rem;
+  line-height:1.9;
   color:var(--sub);
 }
 
-/* SECTIONS */
+/* SEÇÕES */
 section{
   max-width:1100px;
   margin:auto;
-  padding:140px 40px;
+  padding:120px 40px;
 }
+
 .card{
   background:var(--card);
   padding:80px;
-  border-radius:32px;
+  border-radius:28px;
 }
+
 h2{
-  font-family:'Archivo',sans-serif;
-  font-size:3rem;
+  font-family:"Archivo Black", sans-serif;
   text-transform:uppercase;
-  margin-bottom:40px;
+  font-size:2.8rem;
+  margin-bottom:35px;
 }
+
 h3{
-  font-family:'Archivo',sans-serif;
+  font-family:"Archivo Black", sans-serif;
   text-transform:uppercase;
   margin:50px 0 20px;
 }
+
 p{
   font-size:1.15rem;
   line-height:1.9;
@@ -89,31 +125,36 @@ p{
   margin-bottom:22px;
 }
 
-/* CONTATO */
+/* CONTATOS */
 .contatos{
   display:flex;
   gap:80px;
   margin-top:50px;
 }
+
 .contatos div{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
 }
-.contatos img{width:28px}
+
+.contatos img{
+  width:26px;
+}
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:40px;
+  font-size:.9rem;
   color:var(--sub);
 }
 
-/* ANIMATION */
+/* ANIMAÇÃO SCROLL */
 [data-animate]{
   opacity:0;
   transform:translateY(40px);
-  transition:.8s;
+  transition:.8s ease;
 }
 .show{
   opacity:1;
@@ -122,10 +163,17 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-  header{flex-direction:column;gap:20px}
-  .hero h1{font-size:2.7rem}
+  header{
+    flex-direction:column;
+    gap:20px;
+  }
+  .logo img{height:95px}
+  .hero h1{font-size:2.6rem}
   .card{padding:40px}
-  .contatos{flex-direction:column;gap:30px}
+  .contatos{
+    flex-direction:column;
+    gap:30px;
+  }
 }
 </style>
 </head>
@@ -143,10 +191,10 @@ footer{
 </header>
 
 <section class="hero" data-animate>
-  <h1>NewArt Design</h1>
+  <h1>Newart Design</h1>
   <p>
-    Estúdio criativo especializado em branding, identidade visual e artes estratégicas,
-    focado em transformar ideias em marcas fortes, profissionais e memoráveis.
+    Estúdio criativo especializado em branding, identidade visual e design estratégico,
+    focado em criar marcas profissionais, bem posicionadas e visualmente impactantes.
   </p>
 </section>
 
@@ -155,48 +203,48 @@ footer{
 
     <h2>Visão Geral</h2>
     <p>
-      A NewArt Design é um estúdio criativo que atua no desenvolvimento de soluções visuais
-      completas para marcas, empresas e profissionais que buscam posicionamento sólido,
-      identidade clara e comunicação visual de alto impacto.
+      A NewArt Design é um estúdio criativo focado no desenvolvimento de soluções visuais
+      profissionais para marcas, empresas e criadores que buscam autoridade, clareza
+      e identidade forte no mercado.
     </p>
     <p>
-      Trabalhamos com foco estratégico, entendendo o mercado, o público e os objetivos
-      de cada cliente para criar projetos visuais coerentes, modernos e duradouros.
+      Cada projeto é tratado de forma estratégica, analisando o negócio, o público-alvo
+      e os objetivos da marca para garantir resultados sólidos e duradouros.
     </p>
 
     <h3>O que fazemos</h3>
     <p>
-      Desenvolvemos identidades visuais completas, criação de logotipos profissionais,
-      artes para redes sociais, materiais gráficos, banners digitais e soluções visuais
-      personalizadas para diferentes plataformas.
+      Desenvolvemos identidades visuais completas, criação de logotipos, padronização
+      gráfica, artes digitais, layouts personalizados e materiais visuais para redes
+      sociais e plataformas digitais.
     </p>
     <p>
-      Cada projeto passa por briefing detalhado, pesquisa visual, análise de referências
-      e desenvolvimento criativo alinhado à essência da marca.
+      Nosso processo envolve briefing detalhado, pesquisa visual, análise de mercado
+      e desenvolvimento criativo alinhado ao posicionamento da marca.
     </p>
 
     <h3>Artes Criativas</h3>
     <p>
       Criamos artes digitais exclusivas para redes sociais, campanhas promocionais,
-      lançamentos, anúncios e conteúdos institucionais.
+      conteúdos institucionais, anúncios e materiais gráficos personalizados.
     </p>
     <p>
-      Todas as artes são desenvolvidas do zero, respeitando identidade visual,
-      tipografia, paleta de cores e linguagem adequada ao público-alvo.
+      Todas as artes são criadas do zero, respeitando identidade visual, tipografia,
+      paleta de cores e linguagem adequada ao público.
     </p>
 
     <h3>Preços e Orçamentos</h3>
     <p>
-      Os valores variam conforme o tipo de arte, complexidade do projeto, prazo de entrega
-      e nível de personalização solicitado.
+      Os valores variam de acordo com o tipo de arte, complexidade do projeto, prazo
+      de entrega e nível de personalização.
     </p>
     <p>
-      Projetos simples possuem valores mais acessíveis, enquanto trabalhos mais elaborados
-      exigem maior investimento devido ao tempo, estratégia e dedicação envolvidos.
+      Projetos simples possuem valores mais acessíveis, enquanto trabalhos mais
+      elaborados exigem maior investimento devido ao tempo, estratégia e dedicação.
     </p>
     <p>
-      Para um orçamento preciso, é necessário informar o tipo de serviço desejado,
-      referências visuais e prazo estimado.
+      Para um orçamento preciso, entre em contato informando o tipo de serviço,
+      referências desejadas e prazo estimado.
     </p>
 
     <div class="contatos">
@@ -218,10 +266,10 @@ footer{
 </footer>
 
 <script>
-const elements=document.querySelectorAll("[data-animate]");
+const items=document.querySelectorAll("[data-animate]");
 window.addEventListener("scroll",()=>{
-  elements.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-80){
+  items.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
       el.classList.add("show");
     }
   });
@@ -230,9 +278,9 @@ window.addEventListener("scroll",()=>{
 function toggleTheme(){
   document.body.classList.toggle("dark");
   const dark=document.body.classList.contains("dark");
-  logo.src=dark?"logonewartdesign_branca.png":"logonewartdesign_preta.png";
-  instaIcon.src=dark?"logoinstagram_branco.png":"logoinstagram_preto.png";
-  whatsIcon.src=dark?"logowhatsapp_branco.png":"logowhatsapp_preto.png";
+  logo.src = dark ? "logonewartdesign_branca.png" : "logonewartdesign_preta.png";
+  instaIcon.src = dark ? "logoinstagram_branco.png" : "logoinstagram_preto.png";
+  whatsIcon.src = dark ? "logowhatsapp_branco.png" : "logowhatsapp_preto.png";
 }
 </script>
 
