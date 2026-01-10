@@ -5,124 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NewArt Design</title>
 
-<!-- FONTES PROFISSIONAIS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#ffffff;
-  --text:#111111;
-  --sub:#444;
-  --card:#f3f3f3;
-}
-body.dark{
-  --bg:#0f0f0f;
-  --text:#f5f5f5;
-  --sub:#aaa;
-  --card:#1c1c1c;
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --subtext: #444;
+  --card: #f3f3f3;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body.dark {
+  --bg: #0e0e0e;
+  --text: #f5f5f5;
+  --subtext: #aaa;
+  --card: #1a1a1a;
 }
 
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:"Ruda", sans-serif;
+  font-family:'Inter',sans-serif;
   transition:.4s;
+}
+
+/* LOADER */
+#loader{
+  position:fixed;
+  inset:0;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#loader span{
+  font-family:'Archivo',sans-serif;
+  font-size:2rem;
+  letter-spacing:4px;
 }
 
 /* HEADER */
 header{
   width:100%;
-  padding:20px 60px;
+  padding:20px 50px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
+.logo img{height:95px}
 
-.logo img{
-  height:120px;
-}
-
+/* NAV */
 nav{
   display:flex;
-  gap:35px;
+  gap:40px;
   align-items:center;
 }
-
 nav a{
   text-decoration:none;
   color:var(--text);
-  font-family:"Archivo Black", sans-serif;
-  text-transform:uppercase;
-  font-size:.95rem;
+  font-weight:500;
 }
-
-.toggle{
-  cursor:pointer;
-  font-size:1.2rem;
-}
+.toggle{cursor:pointer}
 
 /* HERO */
 .hero{
-  max-width:1100px;
-  margin:120px auto;
+  max-width:1200px;
+  margin:100px auto;
   padding:0 40px;
 }
-
 .hero h1{
-  font-family:"Archivo Black", sans-serif;
+  font-family:'Archivo',sans-serif;
   font-size:4rem;
   text-transform:uppercase;
 }
-
 .hero p{
+  max-width:680px;
   margin-top:25px;
-  max-width:720px;
   font-size:1.2rem;
   line-height:1.9;
-  color:var(--sub);
+  color:var(--subtext);
 }
+
+/* GALERIA */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  padding:140px 50px;
+}
+.galeria img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  border-radius:24px;
+  transition:.4s;
+}
+.galeria img:hover{transform:scale(1.05)}
 
 /* SEÇÕES */
 section{
   max-width:1100px;
   margin:auto;
-  padding:120px 40px;
+  padding:140px 40px;
 }
-
-.card{
-  background:var(--card);
-  padding:80px;
-  border-radius:28px;
-}
-
-h2{
-  font-family:"Archivo Black", sans-serif;
+section h2{
+  font-family:'Archivo',sans-serif;
+  font-size:3rem;
   text-transform:uppercase;
-  font-size:2.8rem;
-  margin-bottom:35px;
+  margin-bottom:40px;
 }
-
-h3{
-  font-family:"Archivo Black", sans-serif;
+section h3{
+  font-family:'Archivo',sans-serif;
   text-transform:uppercase;
-  margin:50px 0 20px;
+  margin:60px 0 20px;
 }
-
-p{
+section p{
   font-size:1.15rem;
   line-height:1.9;
-  color:var(--sub);
-  margin-bottom:22px;
+  color:var(--subtext);
+  margin-bottom:26px;
+}
+
+/* INFO BOX */
+.info-box{
+  background:var(--card);
+  padding:80px;
+  border-radius:32px;
 }
 
 /* CONTATOS */
@@ -131,54 +145,45 @@ p{
   gap:80px;
   margin-top:50px;
 }
-
 .contatos div{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:14px;
 }
-
-.contatos img{
-  width:26px;
-}
+.contatos img{width:28px}
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:40px;
   font-size:.9rem;
-  color:var(--sub);
+  color:var(--subtext);
 }
 
-/* ANIMAÇÃO SCROLL */
+/* ANIMAÇÃO */
 [data-animate]{
   opacity:0;
   transform:translateY(40px);
-  transition:.8s ease;
+  transition:.8s;
 }
-.show{
+[data-animate].show{
   opacity:1;
   transform:translateY(0);
 }
 
 /* MOBILE */
 @media(max-width:768px){
-  header{
-    flex-direction:column;
-    gap:20px;
-  }
-  .logo img{height:95px}
-  .hero h1{font-size:2.6rem}
-  .card{padding:40px}
-  .contatos{
-    flex-direction:column;
-    gap:30px;
-  }
+  header{flex-direction:column;gap:20px}
+  .hero h1{font-size:2.7rem}
+  .info-box{padding:40px}
+  .contatos{flex-direction:column;gap:30px}
 }
 </style>
 </head>
 
 <body>
+
+<div id="loader"><span>NEWART</span></div>
 
 <header>
   <div class="logo">
@@ -191,59 +196,73 @@ footer{
 </header>
 
 <section class="hero" data-animate>
-  <h1>Newart Design</h1>
+  <h1>NewArt Design</h1>
   <p>
-    Estúdio criativo especializado em branding, identidade visual e design estratégico,
-    focado em criar marcas profissionais, bem posicionadas e visualmente impactantes.
+    Estúdio criativo especializado em branding, identidade visual e posicionamento estratégico,
+    desenvolvendo marcas sólidas, profissionais e visualmente impactantes.
   </p>
 </section>
 
+<section class="galeria">
+  <img src="amostra1.jpg" data-animate>
+  <img src="amostra2.jpg" data-animate>
+  <img src="amostra3.jpg" data-animate>
+</section>
+
 <section id="informacoes" data-animate>
-  <div class="card">
+  <div class="info-box">
 
     <h2>Visão Geral</h2>
     <p>
-      A NewArt Design é um estúdio criativo focado no desenvolvimento de soluções visuais
-      profissionais para marcas, empresas e criadores que buscam autoridade, clareza
-      e identidade forte no mercado.
+      A NewArt Design é um estúdio criativo focado em construir identidades visuais fortes,
+      coerentes e alinhadas ao posicionamento estratégico de cada marca.
     </p>
     <p>
-      Cada projeto é tratado de forma estratégica, analisando o negócio, o público-alvo
-      e os objetivos da marca para garantir resultados sólidos e duradouros.
+      Atuamos com uma abordagem profissional e estratégica, entendendo o mercado,
+      o público-alvo e os objetivos do cliente para criar soluções visuais duradouras.
     </p>
 
     <h3>O que fazemos</h3>
     <p>
-      Desenvolvemos identidades visuais completas, criação de logotipos, padronização
-      gráfica, artes digitais, layouts personalizados e materiais visuais para redes
-      sociais e plataformas digitais.
+      Desenvolvemos identidades visuais completas, logotipos profissionais,
+      artes digitais para redes sociais, materiais gráficos e layouts personalizados.
     </p>
     <p>
-      Nosso processo envolve briefing detalhado, pesquisa visual, análise de mercado
-      e desenvolvimento criativo alinhado ao posicionamento da marca.
+      Cada projeto é planejado para comunicar autoridade, clareza e profissionalismo,
+      respeitando a essência e os valores da marca.
+    </p>
+
+    <h3>Processo de trabalho</h3>
+    <p>
+      Nosso processo envolve briefing detalhado, pesquisa visual, análise de mercado,
+      definição de conceito e desenvolvimento criativo estratégico.
+    </p>
+    <p>
+      Todo o trabalho é acompanhado de perto, garantindo qualidade, organização
+      e coerência visual em cada etapa.
     </p>
 
     <h3>Artes Criativas</h3>
     <p>
       Criamos artes digitais exclusivas para redes sociais, campanhas promocionais,
-      conteúdos institucionais, anúncios e materiais gráficos personalizados.
+      lançamentos, anúncios e conteúdos institucionais.
     </p>
     <p>
-      Todas as artes são criadas do zero, respeitando identidade visual, tipografia,
-      paleta de cores e linguagem adequada ao público.
+      Todas as artes são desenvolvidas do zero, sem reutilização de modelos prontos,
+      garantindo originalidade e identidade própria.
     </p>
 
     <h3>Preços e Orçamentos</h3>
     <p>
-      Os valores variam de acordo com o tipo de arte, complexidade do projeto, prazo
-      de entrega e nível de personalização.
+      Os valores variam de acordo com o tipo de arte, complexidade do projeto,
+      prazo de entrega e nível de personalização.
     </p>
     <p>
       Projetos simples possuem valores mais acessíveis, enquanto trabalhos mais
       elaborados exigem maior investimento devido ao tempo, estratégia e dedicação.
     </p>
     <p>
-      Para um orçamento preciso, entre em contato informando o tipo de serviço,
+      Para um orçamento preciso, é necessário informar o tipo de serviço,
       referências desejadas e prazo estimado.
     </p>
 
@@ -266,10 +285,12 @@ footer{
 </footer>
 
 <script>
-const items=document.querySelectorAll("[data-animate]");
+window.onload=()=>{document.getElementById("loader").style.display="none";}
+
+const elements=document.querySelectorAll("[data-animate]");
 window.addEventListener("scroll",()=>{
-  items.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-80){
+  elements.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-80){
       el.classList.add("show");
     }
   });
@@ -278,9 +299,10 @@ window.addEventListener("scroll",()=>{
 function toggleTheme(){
   document.body.classList.toggle("dark");
   const dark=document.body.classList.contains("dark");
-  logo.src = dark ? "logonewartdesign_branca.png" : "logonewartdesign_preta.png";
-  instaIcon.src = dark ? "logoinstagram_branco.png" : "logoinstagram_preto.png";
-  whatsIcon.src = dark ? "logowhatsapp_branco.png" : "logowhatsapp_preto.png";
+
+  logo.src=dark?"logonewartdesign_branca.png":"logonewartdesign_preta.png";
+  instaIcon.src=dark?"logoinstagram_branco.png":"logoinstagram_preto.png";
+  whatsIcon.src=dark?"logowhatsapp_branco.png":"logowhatsapp_preto.png";
 }
 </script>
 
