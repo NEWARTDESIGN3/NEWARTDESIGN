@@ -28,25 +28,26 @@ body {
 header {
   width: 100%;
   background: linear-gradient(90deg, #5a5a5a, #a0a0a0);
-  padding: 35px 60px;
+  padding: 45px 60px; /* barra mais alta */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* LOGO MAIOR */
 .logo img {
-  height: 85px;
+  height: 120px; /* logo bem maior */
 }
 
 /* ===== NAV ===== */
 nav {
   display: flex;
-  gap: 50px;
+  gap: 55px;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #111;
   font-weight: 500;
 }
@@ -54,7 +55,7 @@ nav a {
 /* ===== GALERIA ===== */
 .galeria {
   width: 100%;
-  padding: 70px 60px 40px;
+  padding: 80px 60px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
@@ -62,7 +63,7 @@ nav a {
 
 .galeria img {
   width: 100%;
-  height: 360px;
+  height: 380px;
   object-fit: cover;
   border-radius: 28px;
 }
@@ -71,11 +72,11 @@ nav a {
 .titulo-central {
   text-align: center;
   font-size: 4.5rem;
-  margin: 30px 0 90px;
+  margin: 40px 0 100px;
   font-weight: 500;
 }
 
-/* ===== INÍCIO ===== */
+/* ===== INÍCIO (CONTEÚDO PRINCIPAL) ===== */
 #inicio {
   max-width: 1150px;
   margin: auto;
@@ -83,21 +84,21 @@ nav a {
 }
 
 #inicio h2 {
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   margin-bottom: 30px;
 }
 
 #inicio p {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.9;
-  margin-bottom: 25px;
+  margin-bottom: 26px;
   color: #444;
 }
 
 /* ===== INFORMAÇÕES ===== */
 #informacoes {
   background-color: #f3f3f3;
-  padding: 140px 40px;
+  padding: 150px 40px;
 }
 
 .info-box {
@@ -106,14 +107,14 @@ nav a {
 }
 
 .info-box h2 {
-  font-size: 2.9rem;
+  font-size: 3rem;
   margin-bottom: 40px;
 }
 
 .info-box p {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   line-height: 1.9;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
   color: #333;
 }
 
@@ -130,21 +131,25 @@ footer {
 @media (max-width: 900px) {
   header {
     flex-direction: column;
-    gap: 25px;
-    padding: 30px;
+    gap: 30px;
+    padding: 40px 30px;
+  }
+
+  .logo img {
+    height: 100px;
   }
 
   nav {
-    gap: 30px;
+    gap: 35px;
   }
 
   .galeria {
     grid-template-columns: 1fr;
-    padding: 50px 30px;
+    padding: 60px 30px;
   }
 
   .galeria img {
-    height: 300px;
+    height: 320px;
   }
 
   .titulo-central {
@@ -162,7 +167,6 @@ footer {
   </div>
 
   <nav>
-    <a href="#inicio">Início</a>
     <a href="#informacoes">Informações</a>
     <a href="https://wa.me/5575999753538" target="_blank">Contato</a>
   </nav>
@@ -180,19 +184,19 @@ footer {
   <h2>NewArt Design</h2>
 
   <p>
-    A NewArt Design é um estúdio criativo especializado em design visual, identidade
-    gráfica e soluções visuais estratégicas para marcas que desejam crescer com
-    profissionalismo e autoridade.
+    A NewArt Design é um estúdio criativo especializado em identidade visual, branding
+    e design estratégico para marcas que desejam crescer com autoridade, estética
+    e profissionalismo.
   </p>
 
   <p>
-    Nosso foco é desenvolver artes modernas, bem estruturadas e alinhadas à proposta
-    de cada cliente, transmitindo credibilidade, estética e valor.
+    Desenvolvemos soluções visuais modernas, funcionais e alinhadas aos objetivos
+    de cada cliente, sempre priorizando clareza, impacto visual e posicionamento.
   </p>
 
   <p>
-    Cada projeto é tratado de forma única, com atenção aos detalhes, clareza na
-    comunicação e compromisso com o resultado final.
+    Cada projeto é tratado de forma exclusiva, com atenção total aos detalhes,
+    comunicação transparente e compromisso com a excelência.
   </p>
 </section>
 
@@ -201,40 +205,34 @@ footer {
     <h2>Informações Detalhadas</h2>
 
     <p>
-      Trabalhamos com criação de identidade visual, logotipos, artes para redes sociais,
-      banners digitais, materiais gráficos e layouts personalizados.
+      Atuamos na criação de identidades visuais completas, logotipos, artes para
+      redes sociais, materiais gráficos e layouts personalizados.
     </p>
 
     <p>
-      Nosso processo criativo começa com a análise da ideia, entendimento do objetivo
-      da marca, definição do conceito visual e desenvolvimento da arte com base em
-      estratégia e estética.
+      Nosso processo envolve análise estratégica, briefing detalhado, pesquisa
+      visual e desenvolvimento criativo alinhado ao posicionamento da marca.
     </p>
 
     <p>
-      Todas as artes são desenvolvidas de forma exclusiva, respeitando o posicionamento
-      da marca e garantindo um resultado profissional.
+      Todas as artes são criadas de forma exclusiva, garantindo originalidade,
+      qualidade visual e coerência estética.
     </p>
 
     <p>
-      <strong>Sobre valores:</strong><br>
-      O preço das artes varia de acordo com o tipo de projeto, nível de complexidade,
-      quantidade de detalhes e também conforme a demanda no período.
+      <strong>Valores e orçamentos:</strong><br>
+      O valor das artes varia conforme o tipo de projeto, complexidade,
+      quantidade de detalhes e demanda no período.
     </p>
 
     <p>
-      Projetos simples possuem valores mais acessíveis, enquanto artes mais elaboradas,
-      personalizadas ou com prazo reduzido podem ter um investimento maior.
+      Projetos simples possuem valores mais acessíveis, enquanto trabalhos mais
+      elaborados, personalizados ou com prazo reduzido exigem maior investimento.
     </p>
 
     <p>
-      Para um orçamento preciso, é importante informar o tipo de arte desejada,
-      referências, prazo e finalidade do projeto.
-    </p>
-
-    <p>
-      A NewArt Design preza por organização, clareza, qualidade visual e satisfação
-      total do cliente em cada trabalho entregue.
+      Para um orçamento preciso, entre em contato informando o tipo de arte,
+      referências desejadas e prazo.
     </p>
   </div>
 </section>
