@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>NewArt Design | Design Profissional</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NewArt Design - identidade visual, logotipos e artes profissionais.">
 
@@ -34,126 +33,189 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fff;
-      font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 14px;
     }
 
     .logo img {
-      width: 55px;
-      padding: 4px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.3);
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      padding: 5px;
+      background: rgba(255,255,255,0.35);
     }
 
-    /* SEÇÕES */
-    section {
-      width: 100%;
+    .logo span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
 
-    section img {
-      width: 100%;
-      height: auto;
-      display: block;
+    /* LAYOUT */
+    .container {
+      display: flex;
+      min-height: calc(100vh - 90px);
     }
 
     /* TEXTO */
-    .conteudo {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-      text-align: center;
+    .content {
+      flex: 1;
+      padding: 80px 70px;
     }
 
-    .conteudo h1 {
-      font-size: 32px;
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
       margin-bottom: 20px;
     }
 
-    .conteudo p {
-      font-size: 18px;
-      color: #333;
+    .subtitle {
+      font-size: 26px;
+      margin-bottom: 30px;
     }
 
-    /* WHATSAPP */
+    p {
+      max-width: 700px;
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+
+    /* IMAGEM ATÉ O FINAL DA TELA */
+    .visual {
+      width: 45%;
+      height: calc(100vh - 90px);
+      overflow: hidden;
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.6s ease;
+    }
+
+    /* BOTÃO WHATSAPP */
     .whatsapp {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      width: 60px;
-      height: 60px;
+      width: 62px;
+      height: 62px;
       background: #25d366;
-      color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-      z-index: 1000;
+      font-size: 32px;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: transform 0.3s ease;
     }
 
     .whatsapp:hover {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
-    /* FOOTER */
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .visual {
+        width: 100%;
+        height: 65vh;
+      }
+
+      .content {
+        padding: 50px 30px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <img src="Design sem nome.png" alt="NewArt Design">
-      <span>NEWART DESIGN</span>
-    </div>
-  </header>
-
-  <!-- IMAGEM PRINCIPAL -->
-  <section>
-    <img src="sua-imagem-1.png" alt="Design Profissional">
-  </section>
-
-  <!-- CONTEÚDO -->
-  <div class="conteudo">
-    <h1>Design profissional que valoriza sua marca</h1>
-    <p>
-      Criamos identidades visuais, logotipos e artes profissionais
-      com foco em qualidade, criatividade e resultado.
-    </p>
+<header>
+  <div class="logo">
+    <img src="logonewartdesign.png" alt="NewArt Design">
+    <span>NEWART DESIGN</span>
   </div>
+</header>
 
-  <!-- IMAGEM FINAL -->
-  <section>
-    <img src="sua-imagem-2.png" alt="Criação Visual">
+<main class="container">
+
+  <section class="content">
+    <h1>Artes que valorizam sua marca</h1>
+    <div class="subtitle">logotipos e designs profissionais</div>
+
+    <p>
+      Design criativo e profissional, desenvolvido com organização,
+      atenção aos detalhes e compromisso com prazos.
+    </p>
+
+    <h2>Sobre a NewArt Design</h2>
+    <p>
+      A NewArt Design é uma marca criativa especializada no desenvolvimento
+      de artes visuais e identidades profissionais.
+    </p>
+    <p>
+      Cada projeto é criado com foco em qualidade, clareza visual
+      e alinhamento com a proposta do cliente.
+    </p>
+
+    <h2>Prazo & Compromisso</h2>
+    <p>
+      Trabalhamos de forma organizada, com comunicação clara durante todo
+      o processo criativo, garantindo um resultado profissional e confiável.
+    </p>
   </section>
 
-  <!-- WHATSAPP -->
-  <a
-    class="whatsapp"
-    href="https://wa.me/5575999753538"
-    target="_blank"
-    aria-label="WhatsApp"
-  >
-    ☎
-  </a>
+  <section class="visual">
+    <img id="slider" src="amostra1.jpg" alt="Artes NewArt Design">
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 NewArt Design — Todos os direitos reservados
-  </footer>
+</main>
+
+<!-- BOTÃO WHATSAPP -->
+<a
+  class="whatsapp"
+  href="https://wa.me/5575999753538"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  ☎
+</a>
+
+<script>
+  const imagens = [
+    "amostra1.jpg",
+    "amostra2.jpg",
+    "amostra3.jpg"
+  ];
+
+  let index = 0;
+  const slider = document.getElementById("slider");
+
+  setInterval(() => {
+    slider.style.opacity = 0;
+
+    setTimeout(() => {
+      index = (index + 1) % imagens.length;
+      slider.src = imagens[index];
+      slider.style.opacity = 1;
+    }, 600);
+  }, 3500);
+</script>
 
 </body>
 </html>
