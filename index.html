@@ -6,13 +6,11 @@
 
 <title>NewArt Design</title>
 
-<!-- FONTES -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -37,8 +35,6 @@
 }
 
 /* ===== BASE ===== */
-html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -56,22 +52,42 @@ h1, h2, h3, nav a, .titulo-central {
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(90deg, #dcdcdc, #f4f4f4);
+  background: linear-gradient(90deg, #e6e6e6, #f7f7f7);
   padding: 26px 60px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .dark header {
   background: linear-gradient(90deg, #1a1a1a, #262626);
 }
 
-.logo img {
-  height: 150px;
-  filter: brightness(0) invert(1);
+/* ===== LOGOS (CONTROLE DE COR) ===== */
+.logo img,
+.contato-item img {
+  height: auto;
+  width: auto;
+  transition: filter .4s ease;
 }
 
+/* CLARO = PRETO */
+.logo img,
+.contato-item img {
+  filter: invert(0);
+}
+
+/* ESCURO = BRANCO */
+.dark .logo img,
+.dark .contato-item img {
+  filter: invert(1);
+}
+
+.logo img {
+  height: 150px;
+}
+
+/* ===== NAV ===== */
 nav {
   display: flex;
   align-items: center;
@@ -210,34 +226,6 @@ footer {
   color: #aaa;
   text-align: center;
   padding: 40px;
-  font-size: .9rem;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
-  header {
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 30px;
-  }
-
-  .galeria {
-    grid-template-columns: 1fr;
-    padding: 80px 30px;
-  }
-
-  .galeria img {
-    height: 380px;
-  }
-
-  .titulo-central {
-    font-size: 3rem;
-  }
-
-  .contato-box {
-    flex-direction: column;
-    gap: 40px;
-  }
 }
 </style>
 </head>
@@ -266,53 +254,12 @@ footer {
 
 <section id="inicio">
   <h2>NewArt Design</h2>
-
-  <p>
-    A NewArt Design é um estúdio criativo especializado no desenvolvimento de identidades
-    visuais estratégicas, branding profissional e design de alto padrão para marcas que
-    buscam crescimento, autoridade e posicionamento sólido no mercado.
-  </p>
-
-  <p>
-    Nosso trabalho vai além da criação visual. Atuamos de forma estratégica,
-    analisando o mercado, o público-alvo e os objetivos do cliente para desenvolver
-    soluções visuais consistentes, modernas e alinhadas com resultados reais.
-  </p>
-
-  <p>
-    Cada projeto é tratado de forma exclusiva, com atenção máxima aos detalhes,
-    comunicação clara e compromisso absoluto com qualidade, originalidade e profissionalismo.
-  </p>
-
-  <p>
-    Trabalhamos com marcas pessoais, empresas, empreendedores e negócios que desejam
-    se destacar visualmente, transmitir confiança e fortalecer sua presença digital.
-  </p>
+  <p>Estúdio criativo focado em branding, identidade visual e posicionamento estratégico.</p>
 </section>
 
 <section id="informacoes">
   <h2>Informações Detalhadas</h2>
-
-  <p>
-    Desenvolvemos identidades visuais completas, incluindo logotipo, paleta de cores,
-    tipografia, aplicações visuais, materiais gráficos e diretrizes de uso da marca.
-  </p>
-
-  <p>
-    Também criamos artes profissionais para redes sociais, layouts personalizados,
-    banners, apresentações, cartões, materiais impressos e peças digitais.
-  </p>
-
-  <p>
-    Nosso processo envolve briefing detalhado, pesquisa de mercado, análise de concorrência,
-    desenvolvimento criativo e refinamento estratégico até alcançar um resultado sólido,
-    profissional e alinhado ao posicionamento da marca.
-  </p>
-
-  <p>
-    Cada entrega é pensada para gerar impacto visual, clareza na comunicação
-    e fortalecimento da identidade do cliente.
-  </p>
+  <p>Projetos completos de identidade visual, design gráfico e artes digitais.</p>
 </section>
 
 <section id="contato">
