@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>NewArt Design | Design Profissional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NewArt Design - identidade visual, logotipos e artes profissionais.">
 
   <style>
@@ -38,7 +37,7 @@
 
     .logo img {
       width: 55px;
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 4px;
       background: rgba(255,255,255,0.3);
     }
@@ -46,108 +45,82 @@
     .logo span {
       font-size: 12px;
       letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    /* MAIN */
-    main {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 70px;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
-
-    .texto {
-      max-width: 700px;
-    }
-
-    .texto h1 {
-      font-size: clamp(42px, 6vw, 82px);
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .texto h1 span {
-      display: block;
-      font-size: clamp(22px, 4vw, 42px);
-      font-weight: 400;
-      margin-top: 10px;
-    }
-
-    .subtitulo {
-      margin-top: 25px;
-      font-size: 20px;
-    }
-
-    section {
-      margin-top: 40px;
-    }
-
-    section h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    section p {
-      font-size: 17px;
-      margin-bottom: 15px;
-      max-width: 600px;
-    }
-
-    ul {
-      margin-left: 20px;
-      font-size: 17px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      margin-top: 35px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      background: #25d366;
       color: #000;
-      transition: transform 0.2s ease;
     }
 
-    .whatsapp:hover {
-      transform: scale(1.05);
+    /* LAYOUT PRINCIPAL */
+    .container {
+      display: flex;
+      min-height: calc(100vh - 90px);
     }
 
-    /* SLIDER */
-    .card {
-      width: 340px;
-      height: 440px;
+    /* COLUNA TEXTO */
+    .content {
+      flex: 1;
+      padding: 80px 70px;
+    }
+
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+
+    /* COLUNA IMAGEM GRANDE */
+    .visual {
+      width: 45%;
+      min-height: 100%;
+      background: #cce9f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .image-box {
+      width: 100%;
+      height: 100%;
+      max-height: 900px;
       border-radius: 40px;
-      background-size: cover;
-      background-position: center;
-      transition: opacity 0.8s ease-in-out;
+      overflow: hidden;
+      background: #cce9f6;
     }
 
-    .card.fade {
-      opacity: 0;
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.6s ease;
     }
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
-      main {
-        padding: 35px;
+      .container {
+        flex-direction: column;
       }
 
-      .card {
+      .visual {
         width: 100%;
-        height: 300px;
+        height: 60vh;
+      }
+
+      h1 {
+        font-size: 42px;
       }
     }
   </style>
@@ -157,79 +130,65 @@
 
 <header>
   <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design - Logotipo">
+    <img src="logonewartdesign.png" alt="NewArt Design">
     <span>NEWART DESIGN</span>
   </div>
 </header>
 
-<main>
+<main class="container">
 
-  <div class="texto">
-    <h1>
-      Artes que valorizam sua marca
-      <span>logotipos e designs profissionais</span>
-    </h1>
+  <section class="content">
+    <h1>Artes que valorizam sua marca</h1>
+    <div class="subtitle">logotipos e designs profissionais</div>
 
-    <p class="subtitulo">
+    <p>
       Design criativo e profissional, desenvolvido com organização,
       atenção aos detalhes e compromisso com prazos.
     </p>
 
-    <section>
-      <h2>Sobre a NewArt Design</h2>
-      <p>
-        A <strong>NewArt Design</strong> é uma marca criativa especializada
-        no desenvolvimento de artes visuais e identidades profissionais.
-      </p>
-      <p>
-        Trabalhamos de forma organizada e com comunicação clara,
-        garantindo resultados profissionais e confiáveis.
-      </p>
-    </section>
+    <h2>Sobre a NewArt Design</h2>
+    <p>
+      A NewArt Design é uma marca criativa especializada no desenvolvimento
+      de artes visuais e identidades profissionais.
+    </p>
+    <p>
+      Cada projeto é criado com foco em qualidade, clareza visual
+      e alinhamento com a proposta do cliente.
+    </p>
 
-    <section>
-      <h2>Serviços</h2>
-      <ul>
-        <li>Logotipos profissionais</li>
-        <li>Identidade visual</li>
-        <li>Artes para redes sociais</li>
-        <li>Designs personalizados</li>
-      </ul>
-    </section>
+    <h2>Prazo & Compromisso</h2>
+    <p>
+      Trabalhamos de forma organizada, com comunicação clara durante todo
+      o processo criativo, garantindo um resultado profissional e confiável.
+    </p>
+  </section>
 
-    <a class="whatsapp"
-       href="https://wa.me/5575999753538"
-       target="_blank"
-       rel="noopener noreferrer">
-      💬 Falar no WhatsApp
-    </a>
-  </div>
-
-  <div class="card" id="art-slider"></div>
+  <section class="visual">
+    <div class="image-box">
+      <img id="slider" src="amostra1.jpg" alt="Artes NewArt Design">
+    </div>
+  </section>
 
 </main>
 
 <script>
-  const images = [
+  const imagens = [
     "amostra1.jpg",
     "amostra2.jpg",
     "amostra3.jpg"
   ];
 
   let index = 0;
-  const slider = document.getElementById("art-slider");
-
-  slider.style.backgroundImage = `url(${images[0]})`;
+  const slider = document.getElementById("slider");
 
   setInterval(() => {
-    slider.classList.add("fade");
+    slider.style.opacity = 0;
 
     setTimeout(() => {
-      index = (index + 1) % images.length;
-      slider.style.backgroundImage = `url(${images[index]})`;
-      slider.classList.remove("fade");
-    }, 800);
-
+      index = (index + 1) % imagens.length;
+      slider.src = imagens[index];
+      slider.style.opacity = 1;
+    }, 500);
   }, 3500);
 </script>
 
