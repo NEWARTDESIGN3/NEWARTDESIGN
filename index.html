@@ -1,251 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>NewArt Design | Design Estratégico</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewArt Design — Estúdio Criativo</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NewArt Design — Identidade visual, logotipos e design profissional.">
+  <style>
+    :root {
+      --primary: #111;
+      --secondary: #444;
+      --accent: #25d366;
+      --bg: #ffffff;
+      --gray: #f4f4f4;
+    }
 
-<style>
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
-body{
-  background:#fff;
-  color:#111;
-}
+    body {
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+    }
 
-/* HEADER */
-header{
-  height:80px;
-  background:linear-gradient(90deg,#7a5cff,#6fd3e0);
-  display:flex;
-  align-items:center;
-  padding:0 20px;
-}
+    /* ===== WHATSAPP BUTTON ===== */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+      z-index: 999;
+    }
 
-.menu-btn{
-  font-size:28px;
-  cursor:pointer;
-  margin-right:18px;
-}
+    .whatsapp:hover {
+      transform: scale(1.05);
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+    /* ===== HEADER ===== */
+    header {
+      width: 100%;
+      background: linear-gradient(90deg, #2c2c2c, #555);
+      padding: 50px 20px;
+      color: #fff;
+      text-align: center;
+    }
 
-.logo img{
-  width:50px;
-  height:50px;
-  border-radius:14px;
-  background:rgba(255,255,255,0.3);
-  padding:6px;
-}
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
 
-.logo span{
-  font-size:13px;
-  letter-spacing:3px;
-  font-weight:700;
-}
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0.95;
+    }
 
-/* MENU LATERAL */
-.menu{
-  position:fixed;
-  top:0;
-  left:-100%;
-  width:300px;
-  height:100vh;
-  background:#111;
-  color:#fff;
-  padding:50px 25px;
-  transition:.35s;
-  z-index:9999;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
+    /* ===== IMAGE SECTION ===== */
+    .image-section {
+      width: 100%;
+      padding: 60px 20px 40px;
+      display: flex;
+      justify-content: center;
+      background: #fff;
+    }
 
-.menu.active{ left:0; }
+    .image-section img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      object-fit: contain;
+    }
 
-.menu h3{
-  font-size:24px;
-  margin-bottom:15px;
-}
+    /* ===== CONTENT ===== */
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
 
-.menu p{
-  font-size:15px;
-  line-height:1.7;
-  color:#ccc;
-}
+    .content h2 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+    }
 
-.menu a{
-  margin-top:25px;
-  background:#25d366;
-  padding:15px;
-  border-radius:50px;
-  text-align:center;
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
-}
+    .content p {
+      font-size: 1.15rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
 
-/* OVERLAY */
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);
-  display:none;
-  z-index:9998;
-}
+    /* ===== SECTIONS ===== */
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
 
-.overlay.active{ display:block; }
+    .card {
+      background: var(--gray);
+      padding: 30px;
+      border-radius: 12px;
+    }
 
-/* IMAGEM DESTAQUE */
-.hero-image{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top:30px;
-}
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
 
-.hero-image img{
-  width:90%;
-  max-width:520px;
-  height:auto;
-}
+    .card p {
+      font-size: 1.05rem;
+      color: #333;
+    }
 
-/* TEXTO PRINCIPAL */
-.hero{
-  padding:60px 8%;
-}
+    /* ===== FOOTER ===== */
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
 
-.hero h1{
-  font-size:46px;
-  font-weight:900;
-  line-height:1.1;
-  margin-bottom:20px;
-}
+    footer p {
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
 
-.hero .subtitle{
-  font-size:22px;
-  color:#444;
-  margin-bottom:30px;
-}
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
 
-.hero p{
-  font-size:18px;
-  line-height:1.8;
-  max-width:900px;
-  margin-bottom:20px;
-}
+      .content h2 {
+        font-size: 2rem;
+      }
 
-/* SEÇÕES */
-.section{
-  padding:60px 8%;
-}
-
-.section h2{
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-.section p{
-  font-size:18px;
-  line-height:1.8;
-  max-width:900px;
-  margin-bottom:20px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero h1{ font-size:36px; }
-}
-</style>
+      .content p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design">
-    <span>NEWART DESIGN</span>
-  </div>
-</header>
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/5575999753538" target="_blank" aria-label="WhatsApp">
+    ☎
+  </a>
 
-<!-- MENU -->
-<div class="menu" id="menu">
-  <div>
-    <h3>NewArt Design</h3>
+  <!-- HEADER -->
+  <header>
+    <h1>NewArt Design</h1>
     <p>
-      Estúdio criativo focado na criação de identidades visuais,
-      logotipos e soluções gráficas profissionais.
+      Estúdio criativo especializado em identidade visual, branding e soluções estratégicas
+      para marcas que desejam crescer com profissionalismo e autoridade.
+    </p>
+  </header>
+
+  <!-- IMAGE -->
+  <section class="image-section">
+    <img src="Design sem nome.png" alt="NewArt Design — Arte institucional" />
+  </section>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <h2>Design estratégico para marcas que querem crescer</h2>
+    <p>
+      A NewArt Design é um estúdio criativo focado na construção de marcas fortes,
+      profissionais e bem posicionadas no mercado.
+    </p>
+    <p>
+      Desenvolvemos identidades visuais e soluções gráficas que comunicam valor,
+      credibilidade e confiança, sempre alinhadas aos objetivos estratégicos de cada cliente.
     </p>
 
-    <a href="https://wa.me/5575999753538" target="_blank">
-      💬 Falar no WhatsApp
-    </a>
-  </div>
+    <div class="sections">
+      <div class="card">
+        <h3>Nosso Processo Criativo</h3>
+        <p>
+          Cada projeto começa com análise, briefing e pesquisa aprofundada.
+          Trabalhamos de forma estratégica, unindo estética, clareza visual e
+          posicionamento de marca.
+        </p>
+      </div>
 
-  <p style="font-size:12px;color:#777">
-    © NewArt Design
-  </p>
-</div>
+      <div class="card">
+        <h3>Compromisso e Profissionalismo</h3>
+        <p>
+          Prezamos por organização, comunicação clara e cumprimento de prazos.
+          Nosso foco é entregar qualidade real, com atenção aos detalhes e visão de longo prazo.
+        </p>
+      </div>
 
-<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+      <div class="card">
+        <h3>Soluções Visuais</h3>
+        <p>
+          Identidade visual, logotipos, artes para redes sociais, materiais gráficos
+          e soluções criativas personalizadas para fortalecer sua marca.
+        </p>
+      </div>
+    </div>
+  </main>
 
-<!-- IMAGEM -->
-<section class="hero-image">
-  <img src="amostra1.jpg" alt="NewArt Design">
-</section>
-
-<!-- TEXTO -->
-<section class="hero">
-  <h1>Design estratégico<br>para marcas que<br>querem crescer</h1>
-
-  <div class="subtitle">
-    Identidade visual, logotipos e soluções criativas profissionais
-  </div>
-
-  <p>
-    A <strong>NewArt Design</strong> é um estúdio criativo focado
-    na construção de marcas fortes, profissionais e bem posicionadas.
-  </p>
-
-  <p>
-    Criamos soluções visuais que comunicam valor,
-    confiança e identidade, sempre alinhadas aos objetivos do cliente.
-  </p>
-</section>
-
-<section class="section">
-  <h2>Nosso Processo Criativo</h2>
-  <p>
-    Cada projeto começa com briefing, pesquisa e planejamento estratégico,
-    garantindo clareza visual e consistência.
-  </p>
-
-  <h2>Compromisso e Profissionalismo</h2>
-  <p>
-    Trabalhamos com organização, comunicação clara e respeito aos prazos,
-    entregando resultados sólidos e profissionais.
-  </p>
-</section>
-
-<script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-  document.getElementById("overlay").classList.toggle("active");
-}
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 NewArt Design — Todos os direitos reservados</p>
+  </footer>
 
 </body>
 </html>
