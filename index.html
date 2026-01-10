@@ -1,278 +1,317 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>NewArt Design — Estúdio Criativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NewArt Design</title>
+  <!-- FONTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Archivo+Black&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666;
+      --card: #f3f3f3;
+    }
 
-<style>
-:root{
-  --bg:#ffffff;
-  --text:#111;
-  --sub:#555;
-  --card:#f2f2f2;
-}
+    body.dark {
+      --bg: #0d0d0d;
+      --text: #f5f5f5;
+      --muted: #aaa;
+      --card: #1a1a1a;
+    }
 
-body.dark{
-  --bg:#0e0e0e;
-  --text:#f5f5f5;
-  --sub:#aaa;
-  --card:#1a1a1a;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box}
+    html {
+      scroll-behavior: smooth;
+    }
 
-html{scroll-behavior:smooth}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background .4s, color .4s;
+    }
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Inter',sans-serif;
-  transition:.4s;
-  padding-top:90px;
-}
+    /* ===== HEADER ===== */
+    header {
+      width: 100%;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
 
-/* LOADER */
-#loader{
-  position:fixed;
-  inset:0;
-  background:var(--bg);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  font-family:'Archivo';
-  font-size:2rem;
-  letter-spacing:4px;
-}
+    body.dark header {
+      border-color: rgba(255,255,255,0.08);
+    }
 
-/* HEADER */
-header{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:90px;
-  padding:0 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(12px);
-  z-index:1000;
-}
-body.dark header{background:rgba(14,14,14,.85)}
+    .logo img {
+      height: 38px;
+      transition: transform .3s;
+    }
 
-.logo img{height:70px}
+    .logo img:hover {
+      transform: scale(1.05);
+    }
 
-/* NAV */
-nav{
-  display:flex;
-  align-items:center;
-  gap:30px;
-}
-nav a{
-  text-decoration:none;
-  color:var(--text);
-  font-size:.9rem;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  opacity:.8;
-}
-nav a:hover{opacity:1}
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
 
-/* TOGGLE */
-.toggle{
-  width:52px;
-  height:26px;
-  background:var(--card);
-  border-radius:50px;
-  position:relative;
-  cursor:pointer;
-}
-.toggle .circle{
-  width:22px;
-  height:22px;
-  background:var(--text);
-  border-radius:50%;
-  position:absolute;
-  top:2px;
-  left:2px;
-  transition:.4s;
-}
-body.dark .toggle .circle{
-  transform:translateX(26px);
-}
+    nav a {
+      text-decoration: none;
+      font-size: 14px;
+      color: var(--text);
+      position: relative;
+    }
 
-/* HERO */
-.hero{
-  min-height:80vh;
-  max-width:1200px;
-  margin:auto;
-  padding:0 40px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.hero h1{
-  font-family:'Archivo';
-  font-size:4rem;
-}
-.hero p{
-  max-width:600px;
-  margin-top:20px;
-  font-size:1.2rem;
-  color:var(--sub);
-}
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--text);
+      transition: .3s;
+    }
 
-/* SECTIONS */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:140px 40px;
-}
-section h2{
-  font-family:'Archivo';
-  font-size:3rem;
-  margin-bottom:40px;
-}
-section p{
-  font-size:1.1rem;
-  line-height:1.9;
-  color:var(--sub);
-  margin-bottom:24px;
-}
+    nav a:hover::after {
+      width: 100%;
+    }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
-}
-.card{
-  background:var(--card);
-  padding:50px;
-  border-radius:30px;
-}
+    .toggle {
+      cursor: pointer;
+      font-size: 14px;
+      border: 1px solid var(--text);
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: .3s;
+    }
 
-/* CONTATO */
-.contatos{
-  display:flex;
-  gap:60px;
-  margin-top:40px;
-}
-.contatos div{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.contatos img{width:28px}
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  font-size:.9rem;
-  color:var(--sub);
-}
+    .hero h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(32px, 6vw, 64px);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-/* ANIMAÇÃO */
-[data-animate]{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s;
-}
-[data-animate].show{
-  opacity:1;
-  transform:none;
-}
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
 
-@media(max-width:768px){
-  header{padding:0 30px}
-  .hero h1{font-size:2.6rem}
-  .contatos{flex-direction:column}
-}
-</style>
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    section p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    /* ===== CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 16px;
+      transition: transform .4s, box-shadow .4s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,.08);
+    }
+
+    /* ===== SOCIAL ===== */
+    .social {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .social img {
+      width: 40px;
+      transition: transform .3s;
+    }
+
+    .social img:hover {
+      transform: scale(1.15);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ===== ANIMAÇÕES ===== */
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all .8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-
 <body>
-
-<div id="loader">NEWART</div>
 
 <header>
   <div class="logo">
-    <img id="logo" src="assets/img/logo-dark.png">
+    <img id="logoMain" src="logonewartdesign.png" alt="NewArt Design">
   </div>
+
   <nav>
-    <a href="#visao">Visão Geral</a>
-    <a href="#servicos">O que Fazemos</a>
-    <a href="#precos">Preços</a>
-    <div class="toggle" onclick="toggleTheme()"><div class="circle"></div></div>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#processo">Processo</a>
+    <a href="#contato">Contato</a>
+    <div class="toggle" onclick="toggleTheme()">Tema</div>
   </nav>
 </header>
 
-<section class="hero" data-animate>
-  <h1>NewArt Design</h1>
-  <p>Estúdio criativo especializado em branding, identidade visual e posicionamento estratégico para marcas sólidas e profissionais.</p>
+<section class="hero hidden">
+  <div>
+    <h1>NewArt Design</h1>
+    <p>
+      Estúdio criativo especializado em branding estratégico, identidade visual profissional
+      e posicionamento de marcas. Criamos experiências visuais sólidas, modernas e altamente
+      impactantes, pensadas para gerar valor real e percepção premium.
+    </p>
+
+    <div class="social">
+      <img id="insta" src="logoinstagram1.png">
+      <img id="whats" src="logowhatsapp.png">
+    </div>
+  </div>
 </section>
 
-<section id="visao" data-animate>
+<section id="sobre" class="hidden">
   <h2>Visão Geral</h2>
-  <p>Criamos marcas com propósito, estratégia e impacto visual. Cada projeto nasce do zero, alinhado à essência do cliente.</p>
+  <p>
+    A NewArt Design nasce com o propósito de transformar marcas em ativos estratégicos.
+    Atuamos desde a concepção até a aplicação completa da identidade visual, garantindo
+    coerência, profissionalismo e diferenciação no mercado.
+  </p>
+  <p>
+    Nosso processo é centrado em pesquisa, estratégia e execução refinada, unindo estética
+    e funcionalidade para construir marcas que comunicam autoridade e confiança.
+  </p>
 </section>
 
-<section id="servicos" data-animate>
-  <h2>O que Fazemos</h2>
-  <div class="cards">
-    <div class="card"><p>Identidade visual completa e branding estratégico.</p></div>
-    <div class="card"><p>Logotipos profissionais e posicionamento de marca.</p></div>
-    <div class="card"><p>Artes criativas para redes sociais e mídia digital.</p></div>
+<section id="servicos" class="hidden">
+  <h2>O Que Fazemos</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Branding Estratégico</h3>
+      <p>Criação de marcas fortes, posicionadas e alinhadas ao mercado e público-alvo.</p>
+    </div>
+    <div class="card">
+      <h3>Identidade Visual</h3>
+      <p>Sistemas visuais completos, profissionais e aplicáveis em todos os meios.</p>
+    </div>
+    <div class="card">
+      <h3>Design Digital</h3>
+      <p>Websites, interfaces e experiências digitais modernas e funcionais.</p>
+    </div>
   </div>
 </section>
 
-<section id="precos" data-animate>
-  <h2>Preços</h2>
-  <p>Os valores variam conforme complexidade, prazo e nível de personalização.</p>
-  <p>Para um orçamento preciso, entre em contato.</p>
+<section id="processo" class="hidden">
+  <h2>Nosso Processo</h2>
+  <p>
+    Trabalhamos em etapas bem definidas: diagnóstico, estratégia, conceito, design e aplicação.
+    Isso garante clareza, qualidade e resultados consistentes em cada projeto.
+  </p>
+</section>
 
-  <div class="contatos">
-    <div>
-      <img id="instaIcon" src="assets/img/insta-dark.png">
-      <span>@newartdesign</span>
-    </div>
-    <div>
-      <img id="whatsIcon" src="assets/img/whats-dark.png">
-      <span>(75) 99975-3538</span>
-    </div>
-  </div>
+<section id="contato" class="hidden">
+  <h2>Contato</h2>
+  <p>
+    Entre em contato para iniciar um projeto ou solicitar uma proposta personalizada.
+    Estamos prontos para elevar sua marca a um novo nível.
+  </p>
 </section>
 
 <footer>
-© 2026 NewArt Design — Todos os direitos reservados
+  © 2026 — NewArt Design. Todos os direitos reservados.
 </footer>
 
 <script>
-window.onload=()=>document.getElementById("loader").style.display="none";
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
 
-const items=document.querySelectorAll("[data-animate]");
-window.addEventListener("scroll",()=>{
-  items.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-80){
-      el.classList.add("show");
-    }
-  });
-});
+    const dark = document.body.classList.contains("dark");
 
-function toggleTheme(){
-  document.body.classList.toggle("dark");
-  const dark=document.body.classList.contains("dark");
+    document.getElementById("logoMain").src =
+      dark ? "logonewartdesign-white.png" : "logonewartdesign.png";
 
-  logo.src=dark?"assets/img/logo-light.png":"assets/img/logo-dark.png";
-  instaIcon.src=dark?"assets/img/insta-light.png":"assets/img/insta-dark.png";
-  whatsIcon.src=dark?"assets/img/whats-light.png":"assets/img/whats-dark.png";
-}
+    document.getElementById("insta").src =
+      dark ? "logoinstagram1-white.png" : "logoinstagram1.png";
+
+    document.getElementById("whats").src =
+      dark ? "logowhatsapp-white.png" : "logowhatsapp.png";
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 </script>
 
 </body>
