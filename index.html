@@ -8,6 +8,7 @@
   <meta name="description" content="NewArt Design é um estúdio criativo especializado em identidade visual, logotipos e artes profissionais.">
 
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -36,8 +37,8 @@
     }
 
     .logo img {
-      width: 62px;
-      height: 62px;
+      width: 64px;
+      height: 64px;
       border-radius: 18px;
       padding: 6px;
       background: rgba(255,255,255,0.35);
@@ -70,7 +71,6 @@
 
     .subtitle {
       font-size: 30px;
-      font-weight: 500;
       margin-bottom: 45px;
       color: #333;
     }
@@ -80,7 +80,6 @@
       font-size: 19px;
       line-height: 1.8;
       margin-bottom: 26px;
-      color: #222;
     }
 
     .content h2 {
@@ -89,22 +88,22 @@
       font-size: 28px;
     }
 
-    /* ÁREA VISUAL (IMAGEM AJUSTADA) */
+    /* ÁREA VISUAL (IMAGEM MAIOR) */
     .visual {
       width: 45%;
       height: calc(100vh - 90px);
       display: flex;
-      justify-content: center;
       align-items: flex-start;
-      padding-top: 40px; /* DESCE A IMAGEM */
+      justify-content: center;
+      padding-top: 50px;
       background: #fff;
     }
 
     .visual img {
-      max-width: 110%;   /* AUMENTA UM POUCO */
-      max-height: 110%;
+      max-width: 125%;
+      max-height: 125%;
       object-fit: contain;
-      transition: opacity 0.8s ease;
+      transition: opacity 0.9s ease;
     }
 
     /* WHATSAPP */
@@ -141,13 +140,13 @@
 
       .visual {
         width: 100%;
-        height: 65vh;
+        height: 70vh;
         padding-top: 20px;
       }
 
       .visual img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 110%;
+        max-height: 110%;
       }
 
       .content h1 {
@@ -165,7 +164,7 @@
 
 <header>
   <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design">
+    <img src="logonewartdesign.webp" alt="NewArt Design">
     <span>NEWART DESIGN</span>
   </div>
 </header>
@@ -183,25 +182,28 @@
     </div>
 
     <p>
-      A <strong>NewArt Design</strong> é um estúdio criativo focado em transformar
-      ideias em identidades visuais fortes, modernas e profissionais.
+      A <strong>NewArt Design</strong> é um estúdio criativo especializado
+      no desenvolvimento de identidades visuais modernas, profissionais
+      e alinhadas com o posicionamento de cada marca.
     </p>
 
     <p>
-      Cada projeto é desenvolvido com estratégia, estética e atenção
-      aos detalhes, garantindo que sua marca comunique valor e confiança.
+      Criamos projetos com foco em impacto visual, clareza na comunicação
+      e consistência estética, fortalecendo a presença da sua marca
+      no mercado digital e físico.
     </p>
 
-    <h2>Nosso Processo Criativo</h2>
+    <h2>Processo Criativo</h2>
     <p>
-      Trabalhamos com planejamento, organização e comunicação clara
-      desde o primeiro contato até a entrega final.
+      Nosso processo é organizado, transparente e estratégico.
+      Desde o briefing até a entrega final, cada etapa é pensada
+      para gerar um resultado profissional e eficiente.
     </p>
 
-    <h2>Compromisso com Prazo e Qualidade</h2>
+    <h2>Compromisso</h2>
     <p>
-      Cumprimos prazos, mantemos transparência e entregamos
-      um trabalho consistente e profissional.
+      Cumprimento de prazos, comunicação clara e alto padrão de qualidade
+      fazem parte do nosso compromisso com cada cliente.
     </p>
 
     <h2>Serviços</h2>
@@ -214,12 +216,14 @@
     </p>
   </section>
 
+  <!-- IMAGENS WEBP -->
   <section class="visual">
-    <img id="slider" src="amostra1.jpg" alt="Portfólio NewArt Design">
+    <img id="slider" src="amostra1.webp" alt="Portfólio NewArt Design">
   </section>
 
 </main>
 
+<!-- WHATSAPP -->
 <a
   class="whatsapp"
   href="https://wa.me/5575999753538"
@@ -228,11 +232,12 @@
   💬 Falar no WhatsApp
 </a>
 
+<!-- SLIDER -->
 <script>
   const imagens = [
-    "amostra1.jpg",
-    "amostra2.jpg",
-    "amostra3.jpg"
+    "amostra1.webp",
+    "amostra2.webp",
+    "amostra3.webp"
   ];
 
   let atual = 0;
