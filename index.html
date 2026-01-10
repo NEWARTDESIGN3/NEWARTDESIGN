@@ -9,7 +9,7 @@
 <!-- FONTES -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&600&display=swap" rel="stylesheet">
 
 <style>
 /* ===== RESET ===== */
@@ -19,179 +19,179 @@
   box-sizing: border-box;
 }
 
+/* ===== VARIÁVEIS ===== */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f3f3f3;
+  --text: #111;
+  --text-soft: #444;
+  --card: #ffffff;
+}
+
+.dark {
+  --bg: #0f0f0f;
+  --bg-soft: #171717;
+  --text: #f1f1f1;
+  --text-soft: #bdbdbd;
+  --card: #1c1c1c;
+}
+
 /* ===== BASE ===== */
 html { scroll-behavior: smooth; }
 
 body {
+  background: var(--bg);
+  color: var(--text);
   font-family: "Ruda", sans-serif;
-  background: #0e0e0e;
-  color: #eaeaea;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* ===== LOADER ===== */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #0e0e0e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-#loader img {
-  width: 140px;
-  filter: brightness(0) invert(1);
-  animation: pulse 1.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: .4; }
-  50% { opacity: 1; }
-  100% { opacity: .4; }
-}
-
-/* ===== SCROLL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.9s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+  line-height: 1.8;
+  transition: background .4s ease, color .4s ease;
 }
 
 /* ===== TÍTULOS ===== */
 h1, h2, h3, nav a, .titulo-central {
   font-family: "Archivo Black", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.4px;
 }
 
 /* ===== HEADER ===== */
 header {
-  position: sticky;
-  top: 0;
-  background: linear-gradient(90deg, #1c1c1c, #2a2a2a);
-  padding: 22px;
+  background: linear-gradient(90deg, #dcdcdc, #f4f4f4);
+  padding: 26px 60px;
   display: flex;
-  flex-direction: column;
-  gap: 18px;
   align-items: center;
-  z-index: 1000;
+  justify-content: space-between;
+}
+
+.dark header {
+  background: linear-gradient(90deg, #1a1a1a, #262626);
 }
 
 .logo img {
-  height: 120px;
+  height: 150px;
   filter: brightness(0) invert(1);
 }
 
 nav {
   display: flex;
-  gap: 36px;
+  align-items: center;
+  gap: 50px;
 }
 
 nav a {
-  color: #eaeaea;
   text-decoration: none;
-  font-size: .85rem;
+  font-size: .9rem;
+  color: var(--text);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--text);
+  transition: .3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== TOGGLE ===== */
+.toggle {
+  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+  font-size: .8rem;
+  transition: transform .3s;
+}
+
+.toggle:hover {
+  transform: translateY(-3px);
 }
 
 /* ===== GALERIA ===== */
 .galeria {
-  padding: 70px 22px;
+  padding: 100px 60px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 50px;
 }
 
 .galeria img {
   width: 100%;
-  height: 380px;
+  height: 520px;
   object-fit: cover;
-  border-radius: 26px;
-  transition: transform .6s ease;
+  border-radius: 30px;
+  transition: transform .6s ease, box-shadow .6s ease;
 }
 
 .galeria img:hover {
-  transform: scale(1.05);
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 30px 80px rgba(0,0,0,.25);
 }
 
 /* ===== TÍTULO ===== */
 .titulo-central {
   text-align: center;
-  font-size: 2.8rem;
-  margin: 80px 0;
+  font-size: 4.5rem;
+  margin: 100px 0;
 }
 
 /* ===== SEÇÕES ===== */
 section {
-  padding: 0 22px 120px;
+  max-width: 1150px;
+  margin: auto;
+  padding-bottom: 160px;
 }
 
-#inicio h2 {
-  font-size: 2rem;
-  margin-bottom: 26px;
+section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
 }
 
-#inicio p,
-.info-box p {
-  font-size: 1.1rem;
-  color: #bdbdbd;
-  margin-bottom: 26px;
+section p {
+  font-size: 1.25rem;
+  color: var(--text-soft);
+  margin-bottom: 30px;
 }
 
 /* ===== INFORMAÇÕES ===== */
 #informacoes {
-  background: #141414;
-  padding: 140px 22px;
-}
-
-.info-box h2 {
-  font-size: 2.3rem;
-  margin-bottom: 36px;
+  background: var(--bg-soft);
+  padding: 160px 60px;
 }
 
 /* ===== CONTATO ===== */
 #contato {
-  padding: 140px 22px;
   text-align: center;
-}
-
-#contato h2 {
-  font-size: 2.4rem;
-  margin-bottom: 60px;
 }
 
 .contato-box {
   display: flex;
-  flex-direction: column;
-  gap: 36px;
-  align-items: center;
+  justify-content: center;
+  gap: 160px;
+  margin-top: 60px;
 }
 
 .contato-item {
-  background: #1a1a1a;
-  padding: 24px 30px;
-  border-radius: 22px;
   display: flex;
   align-items: center;
   gap: 18px;
-  transition: transform .3s ease;
+  background: var(--card);
+  padding: 26px 36px;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  transition: transform .4s ease;
 }
 
 .contato-item:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px);
 }
 
 .contato-item img {
@@ -199,54 +199,44 @@ section {
 }
 
 .contato-item a {
-  color: #eaeaea;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  color: var(--text);
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #000;
-  color: #777;
+  background: #111;
+  color: #aaa;
   text-align: center;
-  padding: 36px;
-  font-size: .85rem;
+  padding: 40px;
+  font-size: .9rem;
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 900px) {
-
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
   header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 28px 70px;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 30px;
   }
-
-  .logo img { height: 150px; }
 
   .galeria {
-    max-width: 1400px;
-    margin: auto;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 110px 60px;
+    grid-template-columns: 1fr;
+    padding: 80px 30px;
   }
 
-  .galeria img { height: 520px; }
+  .galeria img {
+    height: 380px;
+  }
 
   .titulo-central {
-    font-size: 4.8rem;
-    margin: 120px 0;
-  }
-
-  section {
-    max-width: 1150px;
-    margin: auto;
-    padding-bottom: 180px;
+    font-size: 3rem;
   }
 
   .contato-box {
-    flex-direction: row;
-    gap: 160px;
+    flex-direction: column;
+    gap: 40px;
   }
 }
 </style>
@@ -254,44 +244,78 @@ footer {
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <img src="logonewartdesign.png">
-</div>
-
-<header class="reveal">
+<header>
   <div class="logo">
     <img src="logonewartdesign.png">
   </div>
+
   <nav>
     <a href="#informacoes">Informações</a>
     <a href="#contato">Contato</a>
+    <div class="toggle" onclick="toggleTheme()">Dark / Light</div>
   </nav>
 </header>
 
-<section class="galeria reveal">
+<section class="galeria">
   <img src="amostra1.jpg">
   <img src="amostra2.jpg">
   <img src="amostra3.jpg">
 </section>
 
-<div class="titulo-central reveal">Informações</div>
+<div class="titulo-central">Informações</div>
 
-<section id="inicio" class="reveal">
+<section id="inicio">
   <h2>NewArt Design</h2>
-  <p>Estúdio criativo focado em branding, identidade visual e design estratégico.</p>
-  <p>Criamos marcas com autoridade, estética e posicionamento profissional.</p>
+
+  <p>
+    A NewArt Design é um estúdio criativo especializado no desenvolvimento de identidades
+    visuais estratégicas, branding profissional e design de alto padrão para marcas que
+    buscam crescimento, autoridade e posicionamento sólido no mercado.
+  </p>
+
+  <p>
+    Nosso trabalho vai além da criação visual. Atuamos de forma estratégica,
+    analisando o mercado, o público-alvo e os objetivos do cliente para desenvolver
+    soluções visuais consistentes, modernas e alinhadas com resultados reais.
+  </p>
+
+  <p>
+    Cada projeto é tratado de forma exclusiva, com atenção máxima aos detalhes,
+    comunicação clara e compromisso absoluto com qualidade, originalidade e profissionalismo.
+  </p>
+
+  <p>
+    Trabalhamos com marcas pessoais, empresas, empreendedores e negócios que desejam
+    se destacar visualmente, transmitir confiança e fortalecer sua presença digital.
+  </p>
 </section>
 
-<section id="informacoes" class="reveal">
-  <div class="info-box">
-    <h2>Informações Detalhadas</h2>
-    <p>Identidade visual completa, logotipos, sistemas gráficos e artes digitais.</p>
-    <p>Processo estratégico, criativo e totalmente personalizado.</p>
-  </div>
+<section id="informacoes">
+  <h2>Informações Detalhadas</h2>
+
+  <p>
+    Desenvolvemos identidades visuais completas, incluindo logotipo, paleta de cores,
+    tipografia, aplicações visuais, materiais gráficos e diretrizes de uso da marca.
+  </p>
+
+  <p>
+    Também criamos artes profissionais para redes sociais, layouts personalizados,
+    banners, apresentações, cartões, materiais impressos e peças digitais.
+  </p>
+
+  <p>
+    Nosso processo envolve briefing detalhado, pesquisa de mercado, análise de concorrência,
+    desenvolvimento criativo e refinamento estratégico até alcançar um resultado sólido,
+    profissional e alinhado ao posicionamento da marca.
+  </p>
+
+  <p>
+    Cada entrega é pensada para gerar impacto visual, clareza na comunicação
+    e fortalecimento da identidade do cliente.
+  </p>
 </section>
 
-<section id="contato" class="reveal">
+<section id="contato">
   <h2>Contato</h2>
 
   <div class="contato-box">
@@ -311,23 +335,10 @@ footer {
   © 2026 NewArt Design — Todos os direitos reservados
 </footer>
 
-<!-- JS -->
 <script>
-/* LOADER */
-window.addEventListener("load", () => {
-  document.getElementById("loader").classList.add("hidden");
-});
-
-/* SCROLL REVEAL */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
 </script>
 
 </body>
