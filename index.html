@@ -12,14 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
 }
@@ -42,15 +40,15 @@ h1, h2, h3, nav a, .titulo-central {
 header {
   width: 100%;
   background: linear-gradient(90deg, #5a5a5a, #a0a0a0);
-  padding: 45px 60px;
+  padding: 55px 60px; /* barra um pouco mais alta */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO BRANCA */
+/* LOGO BEM MAIOR */
 .logo img {
-  height: 120px;
+  height: 180px;              /* AQUI a logo ficou bem maior */
   filter: brightness(0) invert(1);
 }
 
@@ -77,7 +75,7 @@ nav a {
 
 .galeria img {
   width: 100%;
-  height: 480px; /* CRESCEM PARA BAIXO */
+  height: 480px;
   object-fit: cover;
   border-radius: 28px;
 }
@@ -104,7 +102,7 @@ nav a {
 #inicio p {
   font-size: 1.3rem;
   line-height: 1.9;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
   color: #444;
 }
 
@@ -127,7 +125,7 @@ nav a {
 .info-box p {
   font-size: 1.3rem;
   line-height: 1.9;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   color: #333;
 }
 
@@ -186,16 +184,11 @@ footer {
   }
 
   .logo img {
-    height: 100px;
-  }
-
-  nav {
-    gap: 35px;
+    height: 140px; /* logo grande, mas equilibrada no mobile */
   }
 
   .galeria {
     grid-template-columns: 1fr;
-    padding: 60px 30px;
   }
 
   .galeria img {
@@ -223,9 +216,9 @@ footer {
 </header>
 
 <section class="galeria">
-  <img src="amostra1.jpg" alt="Trabalho NewArt Design">
-  <img src="amostra2.jpg" alt="Arte profissional">
-  <img src="amostra3.jpg" alt="Identidade visual">
+  <img src="amostra1.jpg">
+  <img src="amostra2.jpg">
+  <img src="amostra3.jpg">
 </section>
 
 <div class="titulo-central">Informações</div>
@@ -234,29 +227,26 @@ footer {
   <h2>NewArt Design</h2>
 
   <p>
-    A NewArt Design é um estúdio criativo especializado em identidade visual, branding
-    e design estratégico para marcas que desejam crescer com autoridade, estética
-    e profissionalismo.
+    A NewArt Design é um estúdio criativo focado no desenvolvimento de identidades visuais
+    sólidas, estratégicas e visualmente impactantes.
   </p>
 
   <p>
-    Desenvolvemos soluções visuais modernas, funcionais e alinhadas aos objetivos
-    de cada cliente, sempre priorizando clareza, impacto visual e posicionamento.
+    Nosso trabalho vai além da estética, unindo estratégia, posicionamento e design
+    para fortalecer marcas e gerar autoridade.
   </p>
 
   <p>
-    Cada projeto é tratado de forma exclusiva, com atenção total aos detalhes,
-    comunicação transparente e compromisso com a excelência.
+    Cada projeto é desenvolvido com atenção máxima aos detalhes e alinhamento total
+    com os objetivos do cliente.
   </p>
 </section>
 
 <section id="informacoes">
   <div class="info-box">
     <h2>Informações Detalhadas</h2>
-
-    <p>Atuamos na criação de identidades visuais completas, logotipos, artes para redes sociais, materiais gráficos e layouts personalizados.</p>
-    <p>Nosso processo envolve análise estratégica, briefing detalhado, pesquisa visual e desenvolvimento criativo.</p>
-    <p>Todas as artes são criadas de forma exclusiva, garantindo originalidade e qualidade visual.</p>
+    <p>Desenvolvimento de identidades visuais, logotipos, artes digitais e materiais gráficos.</p>
+    <p>Processo criativo estruturado, estratégico e totalmente personalizado.</p>
   </div>
 </section>
 
@@ -265,12 +255,12 @@ footer {
 
   <div class="contato-box">
     <div class="contato-item">
-      <img src="logowhatsapp.png" alt="WhatsApp">
+      <img src="logowhatsapp.png">
       <a href="https://wa.me/5575999753538" target="_blank">+55 75 99975-3538</a>
     </div>
 
     <div class="contato-item">
-      <img src="logoinstagram1.png" alt="Instagram">
+      <img src="logoinstagram1.png">
       <a href="https://instagram.com/newartdesign2026" target="_blank">@newartdesign2026</a>
     </div>
   </div>
