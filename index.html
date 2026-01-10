@@ -8,7 +8,6 @@
   <meta name="description" content="NewArt Design é um estúdio criativo especializado em identidade visual, logotipos e artes profissionais.">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -17,8 +16,9 @@
     }
 
     body {
-      background: #ffffff;
+      background: #fff;
       color: #111;
+      overflow-x: hidden;
     }
 
     /* HEADER */
@@ -27,19 +27,33 @@
       background: linear-gradient(90deg, #7a5cff, #6fd3e0);
       display: flex;
       align-items: center;
-      padding: 0 70px;
+      justify-content: space-between;
+      padding: 0 40px;
     }
 
-    .logo {
+    .left-header {
       display: flex;
       align-items: center;
       gap: 18px;
     }
 
+    /* BOTÃO MENU */
+    .menu-btn {
+      font-size: 32px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
     .logo img {
-      width: 72px;
-      height: 72px;
-      border-radius: 22px;
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
       padding: 6px;
       background: rgba(255,255,255,0.35);
     }
@@ -50,85 +64,121 @@
       letter-spacing: 3px;
     }
 
+    /* MENU LATERAL */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 340px;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+      padding: 60px 30px;
+      transition: left 0.35s ease;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu.active {
+      left: 0;
+    }
+
+    .menu h3 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .menu p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #ddd;
+    }
+
+    .menu .whatsapp-btn {
+      margin-top: 40px;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      background: #25d366;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* OVERLAY */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 9998;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
     /* LAYOUT */
     .container {
       display: flex;
       min-height: calc(100vh - 90px);
     }
 
-    /* CONTEÚDO */
     .content {
       width: 56%;
-      padding: 120px 100px;
+      padding: 120px 80px;
     }
 
     .content h1 {
-      font-size: 84px;
+      font-size: 72px;
       font-weight: 900;
-      line-height: 1.05;
       margin-bottom: 40px;
+      line-height: 1.1;
     }
 
     .subtitle {
-      font-size: 36px;
-      font-weight: 500;
-      margin-bottom: 60px;
+      font-size: 32px;
+      margin-bottom: 50px;
       color: #333;
     }
 
     .content p {
-      max-width: 860px;
       font-size: 22px;
       line-height: 1.9;
-      margin-bottom: 34px;
-      color: #222;
+      margin-bottom: 30px;
     }
 
     .content h2 {
-      margin-top: 80px;
-      margin-bottom: 26px;
-      font-size: 34px;
-      font-weight: 700;
+      margin-top: 70px;
+      margin-bottom: 22px;
+      font-size: 32px;
     }
 
     /* VISUAL */
     .visual {
       width: 44%;
-      min-height: calc(100vh - 90px);
+      padding-top: 160px;
       display: flex;
-      align-items: flex-start;
       justify-content: center;
-      padding-top: 140px;
       overflow: hidden;
     }
 
     .visual img {
       width: 100%;
-      max-width: 600px;
+      max-width: 620px;
       height: auto;
       object-fit: contain;
-      transition: opacity 0.8s ease;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 18px 34px;
-      background: #25d366;
-      border-radius: 50px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: transform 0.25s ease;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
+      transition: opacity 0.7s ease;
     }
 
     /* RESPONSIVO */
@@ -139,29 +189,28 @@
 
       .content {
         width: 100%;
-        padding: 80px 40px;
+        padding: 80px 30px;
       }
 
       .content h1 {
-        font-size: 54px;
+        font-size: 48px;
       }
 
       .subtitle {
-        font-size: 26px;
+        font-size: 24px;
       }
 
       .content p {
-        font-size: 19px;
+        font-size: 18px;
       }
 
       .visual {
         width: 100%;
-        min-height: 65vh;
         padding-top: 40px;
       }
 
       .visual img {
-        max-width: 92%;
+        max-width: 90%;
       }
     }
   </style>
@@ -170,57 +219,71 @@
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design">
-    <span>NEWART DESIGN</span>
+  <div class="left-header">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div class="logo">
+      <img src="logonewartdesign.png" alt="NewArt Design">
+      <span>NEWART DESIGN</span>
+    </div>
   </div>
 </header>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+  <div>
+    <h3>NewArt Design</h3>
+    <p>
+      Estúdio criativo especializado em identidade visual,
+      logotipos e soluções profissionais para marcas que
+      desejam crescer e se posicionar com autoridade.
+    </p>
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/5575999753538"
+      target="_blank"
+    >
+      💬 Falar no WhatsApp
+    </a>
+  </div>
+
+  <p style="font-size:14px; color:#aaa;">
+    © NewArt Design — Todos os direitos reservados
+  </p>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <main class="container">
 
   <section class="content">
-    <h1>
-      Design estratégico<br>
-      para marcas que querem crescer
-    </h1>
+    <h1>Design estratégico<br>para marcas que crescem</h1>
 
     <div class="subtitle">
       Identidade visual, logotipos e soluções criativas profissionais
     </div>
 
     <p>
-      A <strong>NewArt Design</strong> é um estúdio criativo focado na construção
-      de marcas fortes, profissionais e bem posicionadas. Desenvolvemos
-      soluções visuais que comunicam valor, confiança e identidade.
+      A <strong>NewArt Design</strong> atua no desenvolvimento de marcas
+      sólidas, profissionais e bem posicionadas no mercado.
     </p>
 
     <p>
-      Cada projeto é pensado estrategicamente, combinando estética,
-      clareza visual e objetivos de negócio, garantindo um resultado
-      consistente e alinhado com o mercado.
+      Criamos soluções visuais que comunicam valor, confiança
+      e identidade, sempre alinhadas aos objetivos do seu negócio.
     </p>
 
     <h2>Processo Criativo</h2>
     <p>
-      Nosso processo é organizado e transparente. Começamos com briefing,
-      pesquisa e alinhamento estratégico, evoluindo para criação,
-      refinamento e entrega profissional.
+      Nosso processo é estruturado, estratégico e transparente,
+      garantindo resultados consistentes e profissionais.
     </p>
 
-    <h2>Compromisso e Qualidade</h2>
+    <h2>Compromisso</h2>
     <p>
-      Cumprimos prazos, respeitamos o briefing e mantemos um alto padrão
-      visual em cada detalhe. Nosso compromisso é entregar qualidade
-      e gerar resultados reais para sua marca.
-    </p>
-
-    <h2>Serviços</h2>
-    <p>
-      • Logotipos profissionais<br>
-      • Identidade visual completa<br>
-      • Artes para redes sociais<br>
-      • Materiais gráficos e digitais<br>
-      • Projetos criativos personalizados
+      Trabalhamos com prazos claros, comunicação direta e alto
+      padrão visual em cada projeto.
     </p>
   </section>
 
@@ -230,15 +293,12 @@
 
 </main>
 
-<a
-  class="whatsapp"
-  href="https://wa.me/5575999753538"
-  target="_blank"
->
-  💬 Falar no WhatsApp
-</a>
-
 <script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
+  }
+
   const imagens = [
     "amostra1.jpg",
     "amostra2.jpg",
@@ -250,7 +310,6 @@
 
   setInterval(() => {
     slider.style.opacity = 0;
-
     setTimeout(() => {
       atual = (atual + 1) % imagens.length;
       slider.src = imagens[atual];
