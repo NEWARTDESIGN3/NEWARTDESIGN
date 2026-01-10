@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>NewArt Design | Estúdio Criativo</title>
+<title>NewArt Design | Design Estratégico</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NewArt Design — Identidade visual, logotipos e design estratégico profissional.">
+<meta name="description" content="NewArt Design — Identidade visual, logotipos e design profissional.">
 
 <style>
 /* RESET */
@@ -17,9 +17,8 @@
 }
 
 body{
-  background:#ffffff;
+  background:#fff;
   color:#111;
-  overflow-x:hidden;
 }
 
 /* HEADER */
@@ -28,13 +27,13 @@ header{
   background:linear-gradient(90deg,#7a5cff,#6fd3e0);
   display:flex;
   align-items:center;
-  padding:0 25px;
+  padding:0 20px;
 }
 
 .menu-btn{
-  font-size:30px;
+  font-size:28px;
   cursor:pointer;
-  margin-right:20px;
+  margin-right:18px;
 }
 
 .logo{
@@ -44,11 +43,11 @@ header{
 }
 
 .logo img{
-  width:52px;
-  height:52px;
+  width:50px;
+  height:50px;
   border-radius:14px;
+  background:rgba(255,255,255,0.3);
   padding:6px;
-  background:rgba(255,255,255,0.35);
 }
 
 .logo span{
@@ -62,12 +61,12 @@ header{
   position:fixed;
   top:0;
   left:-100%;
-  width:320px;
+  width:300px;
   height:100vh;
   background:#111;
   color:#fff;
-  padding:60px 25px;
-  transition:0.35s ease;
+  padding:50px 25px;
+  transition:.35s;
   z-index:9999;
   display:flex;
   flex-direction:column;
@@ -77,7 +76,7 @@ header{
 .menu.active{ left:0; }
 
 .menu h3{
-  font-size:26px;
+  font-size:24px;
   margin-bottom:15px;
 }
 
@@ -88,23 +87,168 @@ header{
 }
 
 .menu a{
-  text-decoration:none;
-}
-
-.whatsapp-btn{
-  margin-top:30px;
-  padding:16px;
+  margin-top:25px;
   background:#25d366;
-  color:#fff;
-  text-align:center;
+  padding:15px;
   border-radius:50px;
-  font-size:16px;
+  text-align:center;
+  color:#fff;
   font-weight:700;
+  text-decoration:none;
 }
 
 /* OVERLAY */
 .overlay{
   position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  z-index:9998;
+}
+
+.overlay.active{ display:block; }
+
+/* IMAGEM DESTAQUE */
+.hero-image{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.hero-image img{
+  width:90%;
+  max-width:520px;
+  height:auto;
+}
+
+/* TEXTO PRINCIPAL */
+.hero{
+  padding:60px 8%;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero .subtitle{
+  font-size:22px;
+  color:#444;
+  margin-bottom:30px;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:900px;
+  margin-bottom:20px;
+}
+
+/* SEÇÕES */
+.section{
+  padding:60px 8%;
+}
+
+.section h2{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.section p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:900px;
+  margin-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{ font-size:36px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="logo">
+    <img src="logonewartdesign.png" alt="NewArt Design">
+    <span>NEWART DESIGN</span>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+  <div>
+    <h3>NewArt Design</h3>
+    <p>
+      Estúdio criativo focado na criação de identidades visuais,
+      logotipos e soluções gráficas profissionais.
+    </p>
+
+    <a href="https://wa.me/5575999753538" target="_blank">
+      💬 Falar no WhatsApp
+    </a>
+  </div>
+
+  <p style="font-size:12px;color:#777">
+    © NewArt Design
+  </p>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- IMAGEM -->
+<section class="hero-image">
+  <img src="amostra1.jpg" alt="NewArt Design">
+</section>
+
+<!-- TEXTO -->
+<section class="hero">
+  <h1>Design estratégico<br>para marcas que<br>querem crescer</h1>
+
+  <div class="subtitle">
+    Identidade visual, logotipos e soluções criativas profissionais
+  </div>
+
+  <p>
+    A <strong>NewArt Design</strong> é um estúdio criativo focado
+    na construção de marcas fortes, profissionais e bem posicionadas.
+  </p>
+
+  <p>
+    Criamos soluções visuais que comunicam valor,
+    confiança e identidade, sempre alinhadas aos objetivos do cliente.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Nosso Processo Criativo</h2>
+  <p>
+    Cada projeto começa com briefing, pesquisa e planejamento estratégico,
+    garantindo clareza visual e consistência.
+  </p>
+
+  <h2>Compromisso e Profissionalismo</h2>
+  <p>
+    Trabalhamos com organização, comunicação clara e respeito aos prazos,
+    entregando resultados sólidos e profissionais.
+  </p>
+</section>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>  position:fixed;
   inset:0;
   background:rgba(0,0,0,0.5);
   display:none;
