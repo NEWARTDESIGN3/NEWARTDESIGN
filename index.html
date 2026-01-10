@@ -89,19 +89,20 @@
       font-size: 28px;
     }
 
-    /* ÁREA VISUAL */
+    /* ÁREA VISUAL (IMAGEM AJUSTADA) */
     .visual {
       width: 45%;
       height: calc(100vh - 90px);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px; /* DESCE A IMAGEM */
       background: #fff;
     }
 
     .visual img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 110%;   /* AUMENTA UM POUCO */
+      max-height: 110%;
       object-fit: contain;
       transition: opacity 0.8s ease;
     }
@@ -141,6 +142,12 @@
       .visual {
         width: 100%;
         height: 65vh;
+        padding-top: 20px;
+      }
+
+      .visual img {
+        max-width: 100%;
+        max-height: 100%;
       }
 
       .content h1 {
@@ -165,7 +172,6 @@
 
 <main class="container">
 
-  <!-- TEXTO -->
   <section class="content">
     <h1>
       Design estratégico<br>
@@ -179,26 +185,23 @@
     <p>
       A <strong>NewArt Design</strong> é um estúdio criativo focado em transformar
       ideias em identidades visuais fortes, modernas e profissionais.
-      Desenvolvemos projetos que comunicam valor, confiança e personalidade.
     </p>
 
     <p>
-      Cada detalhe é pensado estrategicamente para que sua marca se destaque
-      no mercado, seja nas redes sociais, no digital ou no material impresso.
+      Cada projeto é desenvolvido com estratégia, estética e atenção
+      aos detalhes, garantindo que sua marca comunique valor e confiança.
     </p>
 
     <h2>Nosso Processo Criativo</h2>
     <p>
-      Trabalhamos com organização, planejamento e comunicação clara.
-      Antes de iniciar qualquer projeto, alinhamos expectativas, referências
-      e objetivos para garantir um resultado coerente e eficiente.
+      Trabalhamos com planejamento, organização e comunicação clara
+      desde o primeiro contato até a entrega final.
     </p>
 
     <h2>Compromisso com Prazo e Qualidade</h2>
     <p>
-      Valorizamos responsabilidade e profissionalismo em todas as etapas.
-      Cumprir prazos, manter transparência e entregar um trabalho de alto nível
-      faz parte do nosso padrão.
+      Cumprimos prazos, mantemos transparência e entregamos
+      um trabalho consistente e profissional.
     </p>
 
     <h2>Serviços</h2>
@@ -211,14 +214,12 @@
     </p>
   </section>
 
-  <!-- IMAGEM -->
   <section class="visual">
     <img id="slider" src="amostra1.jpg" alt="Portfólio NewArt Design">
   </section>
 
 </main>
 
-<!-- WHATSAPP -->
 <a
   class="whatsapp"
   href="https://wa.me/5575999753538"
@@ -227,7 +228,6 @@
   💬 Falar no WhatsApp
 </a>
 
-<!-- SLIDER -->
 <script>
   const imagens = [
     "amostra1.jpg",
