@@ -1,238 +1,232 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>NewArt Design — Estúdio Criativo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>NewArt Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FONTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Archivo+Black&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Archivo+Black&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #666;
-      --card: #f3f3f3;
-    }
+<style>
+/* ================= VARIÁVEIS ================= */
+:root{
+  --bg:#ffffff;
+  --text:#111;
+  --muted:#555;
+  --card:#f3f3f3;
+}
+body.dark{
+  --bg:#0d0d0d;
+  --text:#f5f5f5;
+  --muted:#aaa;
+  --card:#1a1a1a;
+}
 
-    body.dark {
-      --bg: #0d0d0d;
-      --text: #f5f5f5;
-      --muted: #aaa;
-      --card: #1a1a1a;
-    }
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  transition:.4s;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* ================= HEADER ================= */
+header{
+  padding:16px 24px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+}
+body.dark header{
+  border-color:rgba(255,255,255,.1);
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background .4s, color .4s;
-    }
+/* LOGO */
+.logo img{
+  height:44px;
+  transition:.4s;
+}
 
-    /* ===== HEADER ===== */
-    header {
-      width: 100%;
-      padding: 14px 24px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-    }
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
+.toggle{
+  cursor:pointer;
+  padding:6px 16px;
+  border-radius:20px;
+  border:1px solid var(--text);
+  font-size:13px;
+}
 
-    body.dark header {
-      border-color: rgba(255,255,255,0.08);
-    }
+/* ================= AMOSTRAS ================= */
+.samples{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+}
+.samples img{
+  height:70px;
+  border-radius:16px;
+  object-fit:cover;
+  transition:.4s;
+}
+.samples img:hover{
+  transform:scale(1.07);
+}
 
-    .logo img {
-      height: 38px;
-      transition: transform .3s;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
+.hero h1{
+  font-family:'Archivo Black';
+  font-size:clamp(36px,6vw,74px);
+  margin-bottom:28px;
+  letter-spacing:2px;
+}
+.hero p{
+  max-width:900px;
+  margin:auto;
+  font-size:20px;
+  line-height:2;
+  color:var(--muted);
+}
 
-    .logo img:hover {
-      transform: scale(1.05);
-    }
+/* ================= SECTIONS ================= */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:120px 20px;
+}
+section h2{
+  font-family:'Archivo Black';
+  font-size:34px;
+  margin-bottom:40px;
+}
+section p{
+  font-size:18px;
+  line-height:2;
+  margin-bottom:28px;
+  color:var(--muted);
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--card);
+  padding:36px;
+  border-radius:22px;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
 
-    nav a {
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--text);
-      position: relative;
-    }
+/* ================= SOCIAL ================= */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  margin-top:40px;
+}
+.social img{
+  width:44px;
+  transition:.4s;
+}
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--text);
-      transition: .3s;
-    }
+/* ================= MODO ESCURO (MAGIA AQUI) ================= */
+/* ESTA CLASSE TROCA A COR NA HORA */
+body.dark .dynamic-color{
+  filter:invert(1) brightness(1.1);
+}
 
-    nav a:hover::after {
-      width: 100%;
-    }
+/* ================= FOOTER ================= */
+footer{
+  padding:50px 20px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
 
-    .toggle {
-      cursor: pointer;
-      font-size: 14px;
-      border: 1px solid var(--text);
-      padding: 6px 12px;
-      border-radius: 20px;
-      transition: .3s;
-    }
+/* ================= ANIMAÇÃO ================= */
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s ease;
+}
+.show{
+  opacity:1;
+  transform:none;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: clamp(32px, 6vw, 64px);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 32px;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-    }
-
-    section p {
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    /* ===== CARDS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 16px;
-      transition: transform .4s, box-shadow .4s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,.08);
-    }
-
-    /* ===== SOCIAL ===== */
-    .social {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .social img {
-      width: 40px;
-      transition: transform .3s;
-    }
-
-    .social img:hover {
-      transform: scale(1.15);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* ===== ANIMAÇÕES ===== */
-    .hidden {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all .8s ease;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  nav a{display:none}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">
-    <img id="logoMain" src="logonewartdesign.png" alt="NewArt Design">
+  <div class="topbar">
+    <div class="logo">
+      <!-- UMA ÚNICA LOGO -->
+      <img src="logonewartdesign.png" class="dynamic-color">
+    </div>
+
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <div class="toggle" onclick="toggleTheme()">Light / Dark</div>
+    </nav>
   </div>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#processo">Processo</a>
-    <a href="#contato">Contato</a>
-    <div class="toggle" onclick="toggleTheme()">Tema</div>
-  </nav>
+  <div class="samples">
+    <img src="amostra1.jpg">
+    <img src="amostra2.jpg">
+    <img src="amostra3.jpg">
+  </div>
 </header>
 
 <section class="hero hidden">
   <div>
     <h1>NewArt Design</h1>
     <p>
-      Estúdio criativo especializado em branding estratégico, identidade visual profissional
-      e posicionamento de marcas. Criamos experiências visuais sólidas, modernas e altamente
-      impactantes, pensadas para gerar valor real e percepção premium.
+      Estúdio criativo especializado em branding estratégico, identidade visual
+      profissional e posicionamento de marcas, criando soluções sólidas e de alto impacto.
     </p>
 
     <div class="social">
-      <img id="insta" src="logoinstagram1.png">
-      <img id="whats" src="logowhatsapp.png">
+      <img src="logoinstagram1.png" class="dynamic-color">
+      <img src="logowhatsapp.png" class="dynamic-color">
     </div>
   </div>
 </section>
@@ -240,78 +234,60 @@
 <section id="sobre" class="hidden">
   <h2>Visão Geral</h2>
   <p>
-    A NewArt Design nasce com o propósito de transformar marcas em ativos estratégicos.
-    Atuamos desde a concepção até a aplicação completa da identidade visual, garantindo
-    coerência, profissionalismo e diferenciação no mercado.
+    A NewArt Design desenvolve marcas com estratégia, estética e coerência visual,
+    garantindo presença forte e autoridade no mercado.
   </p>
   <p>
-    Nosso processo é centrado em pesquisa, estratégia e execução refinada, unindo estética
-    e funcionalidade para construir marcas que comunicam autoridade e confiança.
+    Cada projeto é pensado para comunicar valor, profissionalismo e diferenciação.
   </p>
 </section>
 
 <section id="servicos" class="hidden">
   <h2>O Que Fazemos</h2>
-
   <div class="grid">
     <div class="card">
-      <h3>Branding Estratégico</h3>
-      <p>Criação de marcas fortes, posicionadas e alinhadas ao mercado e público-alvo.</p>
+      <h3>Branding</h3>
+      <p>Criação e posicionamento de marcas profissionais.</p>
     </div>
     <div class="card">
       <h3>Identidade Visual</h3>
-      <p>Sistemas visuais completos, profissionais e aplicáveis em todos os meios.</p>
+      <p>Logotipos, tipografia, cores e aplicações.</p>
     </div>
     <div class="card">
       <h3>Design Digital</h3>
-      <p>Websites, interfaces e experiências digitais modernas e funcionais.</p>
+      <p>Artes para redes sociais e materiais digitais.</p>
     </div>
   </div>
-</section>
-
-<section id="processo" class="hidden">
-  <h2>Nosso Processo</h2>
-  <p>
-    Trabalhamos em etapas bem definidas: diagnóstico, estratégia, conceito, design e aplicação.
-    Isso garante clareza, qualidade e resultados consistentes em cada projeto.
-  </p>
 </section>
 
 <section id="contato" class="hidden">
   <h2>Contato</h2>
   <p>
-    Entre em contato para iniciar um projeto ou solicitar uma proposta personalizada.
-    Estamos prontos para elevar sua marca a um novo nível.
+    Entre em contato para orçamentos personalizados e projetos exclusivos.
   </p>
 </section>
 
 <footer>
-  © 2026 — NewArt Design. Todos os direitos reservados.
+© 2026 — NewArt Design
 </footer>
 
 <script>
-  function toggleTheme() {
-    document.body.classList.toggle("dark");
+/* TOGGLE DARK / LIGHT */
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
 
-    const dark = document.body.classList.contains("dark");
-
-    document.getElementById("logoMain").src =
-      dark ? "logonewartdesign-white.png" : "logonewartdesign.png";
-
-    document.getElementById("insta").src =
-      dark ? "logoinstagram1-white.png" : "logoinstagram1.png";
-
-    document.getElementById("whats").src =
-      dark ? "logowhatsapp-white.png" : "logowhatsapp.png";
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+/* ANIMAÇÃO POR SCROLL */
+const elements=document.querySelectorAll(".hidden");
+const animate=()=>{
+  elements.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("show");
+    }
+  });
+};
+window.addEventListener("scroll",animate);
+animate();
 </script>
 
 </body>
