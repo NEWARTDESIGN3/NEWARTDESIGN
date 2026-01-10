@@ -53,11 +53,11 @@ header{
   left:0;
   width:100%;
   background:var(--bg);
-  padding:18px 40px;
+  padding:16px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid rgba(0,0,0,.05);
+  border-bottom:1px solid rgba(0,0,0,.06);
   z-index:100;
 }
 
@@ -82,40 +82,37 @@ nav a{
   font-size:20px;
 }
 
-/* HERO */
+/* HERO — CORRIGIDO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  padding:160px 20px 80px; /* ↓ remove o vazio */
   text-align:center;
-  padding:140px 20px 80px;
 }
 
 .hero h1{
   font-family:'Archivo Black';
-  font-size:56px;
+  font-size:52px;
   margin-bottom:20px;
 }
 
 .hero p{
   max-width:800px;
+  margin:auto;
   font-size:22px;
   line-height:2;
   color:var(--muted);
 }
 
-/* SECTIONS */
+/* SECTIONS — CORRIGIDO */
 section{
   max-width:1200px;
-  margin:140px auto;
+  margin:90px auto; /* ↓ antes era 140 */
   padding:0 40px;
 }
 
 section h2{
   font-family:'Archivo Black';
-  font-size:42px;
-  margin-bottom:30px;
+  font-size:40px;
+  margin-bottom:26px;
 }
 
 section p{
@@ -124,17 +121,17 @@ section p{
   color:var(--muted);
 }
 
-/* IMAGENS */
+/* GALERIA */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
-  margin-top:60px;
+  margin-top:40px;
 }
 
 .gallery img{
   width:100%;
-  border-radius:20px;
+  border-radius:18px;
   transition:.4s;
 }
 
@@ -147,41 +144,35 @@ section p{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
-  margin-top:60px;
+  margin-top:40px;
 }
 
 .card{
   background:var(--card);
-  padding:40px;
-  border-radius:30px;
+  padding:36px;
+  border-radius:26px;
   transition:.4s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-}
-
-/* PREÇOS */
-.price{
-  margin-top:30px;
-  font-size:18px;
+  transform:translateY(-8px);
 }
 
 /* CONTATO FINAL */
 .contact-final{
-  margin:160px auto 120px;
+  margin:120px auto 100px;
   text-align:center;
 }
 
 .contact-final h2{
   font-family:'Archivo Black';
-  font-size:42px;
+  font-size:40px;
 }
 
 .contact-final p{
   font-size:20px;
   max-width:800px;
-  margin:30px auto 60px;
+  margin:26px auto 50px;
   line-height:2;
 }
 
@@ -195,8 +186,8 @@ section p{
 .contact-btn{
   display:flex;
   align-items:center;
-  gap:16px;
-  padding:22px 36px;
+  gap:14px;
+  padding:20px 34px;
   border-radius:60px;
   background:var(--card);
   text-decoration:none;
@@ -206,26 +197,26 @@ section p{
 }
 
 .contact-btn img{
-  width:34px;
+  width:32px;
 }
 
 .contact-btn:hover{
   transform:translateY(-8px);
-  box-shadow:0 30px 60px rgba(0,0,0,.2);
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
 }
 
 /* FOOTER */
 footer{
   text-align:center;
-  padding:40px;
+  padding:36px;
   font-size:14px;
   color:var(--muted);
 }
 
-/* ANIMAÇÃO SCROLL */
+/* ANIMAÇÃO */
 .reveal{
   opacity:0;
-  transform:translateY(60px);
+  transform:translateY(40px);
   transition:1s;
 }
 
@@ -236,8 +227,8 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:42px}
-  section h2{font-size:34px}
+  .hero h1{font-size:40px}
+  section h2{font-size:32px}
 }
 </style>
 </head>
@@ -252,32 +243,27 @@ footer{
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
-    <a href="#precos">Preços</a>
     <a href="#contato">Contato</a>
     <span class="toggle" onclick="toggleTheme()">🌙</span>
   </nav>
 </header>
 
 <div class="hero reveal">
-  <div>
-    <h1>NEWART DESIGN</h1>
-    <p>
-      Estúdio criativo focado em branding, identidade visual, design gráfico
-      estratégico e posicionamento profissional de marcas no ambiente digital.
-    </p>
-  </div>
+  <h1>NEWART DESIGN</h1>
+  <p>
+    Estúdio criativo focado em branding, identidade visual e design estratégico,
+    criando marcas sólidas, modernas e profissionais.
+  </p>
 </div>
 
 <section id="sobre" class="reveal">
   <h2>Visão Geral</h2>
   <p>
-    A NewArt Design nasceu com o propósito de criar identidades visuais
-    sólidas, modernas e estratégicas. Cada projeto é desenvolvido com
-    estudo profundo de marca, público-alvo, conceito visual e impacto.
+    A NewArt Design trabalha com foco em impacto visual, estratégia e identidade.
+    Cada projeto é desenvolvido de forma personalizada para fortalecer a marca
+    no ambiente digital.
   </p>
-</section>
 
-<section class="reveal">
   <div class="gallery">
     <img src="amostra1.jpg">
     <img src="amostra2.jpg">
@@ -290,41 +276,30 @@ footer{
   <div class="cards">
     <div class="card">
       <h3>Identidade Visual</h3>
-      <p>Logotipos profissionais, paleta de cores, tipografia e aplicação visual.</p>
+      <p>Logotipos, paleta de cores, tipografia e aplicação profissional.</p>
     </div>
     <div class="card">
       <h3>Design Digital</h3>
-      <p>Artes para redes sociais, anúncios, banners e materiais digitais.</p>
+      <p>Artes para redes sociais, anúncios e materiais digitais.</p>
     </div>
     <div class="card">
-      <h3>Branding Estratégico</h3>
-      <p>Posicionamento, identidade e comunicação visual consistente.</p>
+      <h3>Branding</h3>
+      <p>Posicionamento estratégico e identidade visual consistente.</p>
     </div>
   </div>
 </section>
 
-<section id="precos" class="reveal">
-  <h2>Preços</h2>
-  <p class="price">
-    Os valores dos projetos variam de acordo com a complexidade da arte,
-    quantidade de materiais, tempo de desenvolvimento e nível de personalização.
-    Cada orçamento é feito de forma individual, garantindo exclusividade
-    e qualidade profissional.
-  </p>
-</section>
-
 <section id="contato" class="contact-final reveal">
-  <h2>Vamos Criar Algo Incrível</h2>
+  <h2>Entre em Contato</h2>
   <p>
-    Entre em contato para solicitar um orçamento, tirar dúvidas ou iniciar
-    um projeto criativo totalmente personalizado.
+    Fale conosco para criar um projeto visual único e profissional.
   </p>
 
   <div class="contact-buttons">
-    <a href="https://wa.me/SEUNUMERO" class="contact-btn" target="_blank">
+    <a href="#" class="contact-btn">
       <img src="logowhatsapp.png" class="dynamic"> WhatsApp
     </a>
-    <a href="https://instagram.com/SEUINSTAGRAM" class="contact-btn" target="_blank">
+    <a href="#" class="contact-btn">
       <img src="logoinstagram1.png" class="dynamic"> Instagram
     </a>
   </div>
@@ -335,22 +310,15 @@ footer{
 </footer>
 
 <script>
-/* LOADER */
-window.onload = () => {
-  setTimeout(()=>document.getElementById('loader').style.display='none',800);
-}
+window.onload = ()=>setTimeout(()=>loader.style.display='none',600);
 
-/* DARK / LIGHT */
 function toggleTheme(){
   document.body.classList.toggle('dark');
   document.querySelectorAll('.dynamic').forEach(img=>{
-    img.style.filter = document.body.classList.contains('dark')
-      ? 'invert(1)'
-      : 'invert(0)';
+    img.style.filter=document.body.classList.contains('dark')?'invert(1)':'invert(0)';
   });
 }
 
-/* SCROLL ANIMATION */
 const reveals=document.querySelectorAll('.reveal');
 window.addEventListener('scroll',()=>{
   reveals.forEach(el=>{
