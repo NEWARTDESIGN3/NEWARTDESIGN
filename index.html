@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -20,246 +20,208 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(90deg, #7b6cff, #6bcfd8);
-  padding: 15px 20px;
+  background: linear-gradient(90deg, #6d6d6d, #9a9a9a);
+  padding: 15px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+header img {
+  height: 45px;
 }
 
-.logo img {
-  height: 40px;
-}
-
-/* ===== MENU BUTTON ===== */
-.menu-btn {
-  font-size: 26px;
-  color: #000;
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
   cursor: pointer;
 }
 
-/* ===== SIDE MENU ===== */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 80%;
-  max-width: 320px;
-  height: 100%;
-  background: #111;
-  color: #fff;
-  padding: 30px 20px;
-  transition: 0.4s;
-  z-index: 1000;
-}
-
-.side-menu.active {
-  left: 0;
-}
-
-.side-menu h2 {
-  margin-bottom: 20px;
-}
-
-.side-menu p {
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-  opacity: 0.85;
-}
-
-.side-menu a {
-  display: block;
-  background: #25d366;
-  color: #fff;
-  text-decoration: none;
-  padding: 14px;
-  border-radius: 30px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* ===== HERO ===== */
-.hero {
-  background: #3a3a3a;
-  color: #fff;
-  text-align: center;
-  padding: 70px 20px;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-}
-
-.hero p {
-  max-width: 800px;
-  margin: 15px auto 0;
-  font-size: 1.1rem;
-}
-
-/* ===== IMAGE GRID SECTION ===== */
-.gallery-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.gallery {
+/* ===== GALERIA ===== */
+.galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding: 60px 40px 30px;
 }
 
-.gallery img {
+.galeria img {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
-/* ===== BIG TEXT ===== */
-.big-text {
-  margin-top: 50px;
+/* ===== TEXTO GRANDE ===== */
+.big-title {
   text-align: center;
+  font-size: 4rem;
+  margin: 30px 0 60px;
 }
 
-.big-text h2 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-/* ===== CONTENT ===== */
-.content {
+/* ===== CONTEÚDO INÍCIO ===== */
+.inicio {
   max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 0 25px 100px;
 }
 
-.content h3 {
-  font-size: 2rem;
+.inicio h2 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+.inicio p {
+  font-size: 1.15rem;
+  line-height: 1.7;
   margin-bottom: 20px;
-}
-
-.content p {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
   color: #444;
 }
 
-/* ===== CARDS ===== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #f3f3f3;
-  padding: 30px;
-  border-radius: 15px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 35px 20px;
-  margin-top: 60px;
-}
-
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp {
+/* ===== MODAL ===== */
+.modal {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,.3);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.modal-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.close {
+  text-align: right;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .galeria {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+  }
+
+  .galeria img {
+    height: 280px;
+  }
+
+  .big-title {
+    font-size: 2.8rem;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- SIDE MENU -->
-<div class="side-menu" id="menu">
-  <h2>NewArt Design</h2>
-  <p>Estúdio criativo focado em identidade visual e branding profissional.</p>
-  <a href="https://wa.me/5575999753538">Falar no WhatsApp</a>
-</div>
-
-<!-- HEADER -->
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="NewArt Design">
-  </div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <img src="logonewartdesign.png" alt="NewArt Design">
+  <nav>
+    <a href="#">Início</a>
+    <a onclick="abrirModal()">Informações</a>
+    <a href="https://wa.me/5575999753538" target="_blank">Contato</a>
+  </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Design estratégico para marcas que querem crescer</h1>
-  <p>Identidade visual, branding e soluções criativas com foco em posicionamento e autoridade.</p>
+<section class="galeria">
+  <img src="amostra1.jpg" alt="Arte 1">
+  <img src="amostra2.jpg" alt="Arte 2">
+  <img src="amostra3.jpg" alt="Arte 3">
 </section>
 
-<!-- IMAGE GRID -->
-<section class="gallery-section">
-  <div class="gallery">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
-  </div>
+<div class="big-title">informações</div>
 
-  <div class="big-text">
-    <h2>“informações”</h2>
-  </div>
+<section class="inicio">
+  <h2>NewArt Design</h2>
+  <p>
+    A NewArt Design é uma marca criativa especializada em artes visuais, identidade
+    visual, design digital e soluções gráficas personalizadas.
+  </p>
+  <p>
+    Nosso foco é entregar trabalhos modernos, bem estruturados e alinhados com a
+    identidade de cada cliente, sempre buscando qualidade, estética e profissionalismo.
+  </p>
+  <p>
+    Trabalhamos com atenção aos detalhes, comunicação clara e compromisso com prazos,
+    garantindo que cada projeto seja único e funcional.
+  </p>
 </section>
 
-<!-- CONTENT -->
-<section class="content">
-  <h3>Nosso Processo Criativo</h3>
-  <p>Cada projeto é desenvolvido com estratégia, pesquisa e clareza visual.</p>
+<!-- MODAL INFORMAÇÕES -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="close" onclick="fecharModal()">✖ Fechar</div>
 
-  <div class="cards">
-    <div class="card">
-      <h4>Compromisso</h4>
-      <p>Organização, prazos e qualidade em cada entrega.</p>
-    </div>
-    <div class="card">
-      <h4>Profissionalismo</h4>
-      <p>Design com visão de mercado e posicionamento.</p>
-    </div>
-    <div class="card">
-      <h4>Soluções Visuais</h4>
-      <p>Identidade visual, logotipos e materiais gráficos.</p>
-    </div>
+    <h2>Informações Detalhadas</h2>
+
+    <p>
+      A NewArt Design oferece serviços voltados para criação visual profissional,
+      incluindo artes digitais, identidade visual, banners, logotipos e layouts
+      personalizados.
+    </p>
+
+    <p>
+      Cada projeto é desenvolvido de forma exclusiva, respeitando a ideia do cliente,
+      o objetivo da marca e o público-alvo.
+    </p>
+
+    <p>
+      <strong>Valores e preços:</strong><br>
+      O valor das artes pode variar de acordo com o tipo de trabalho, nível de
+      complexidade, quantidade de detalhes e também conforme a demanda no período.
+    </p>
+
+    <p>
+      Projetos mais simples possuem valores acessíveis, enquanto artes mais elaboradas
+      ou com maior urgência podem ter um custo maior.
+    </p>
+
+    <p>
+      Para receber um orçamento exato, entre em contato informando o tipo de arte desejada,
+      prazo e referências.
+    </p>
+
+    <p>
+      Nosso compromisso é entregar qualidade, profissionalismo e um resultado final
+      que represente exatamente o que você precisa.
+    </p>
   </div>
-</section>
-
-<footer>
-  © 2026 NewArt Design — Todos os direitos reservados
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5575999753538">☎</a>
+</div>
 
 <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+function abrirModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+  document.getElementById("modal").style.display = "none";
 }
 </script>
 
