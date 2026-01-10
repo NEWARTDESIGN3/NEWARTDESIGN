@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>NewArt Design | Design Profissional</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NewArt Design - identidade visual, logotipos e artes profissionais.">
 
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +19,6 @@
     body {
       background: #ffffff;
       color: #000;
-      line-height: 1.6;
     }
 
     /* HEADER */
@@ -32,24 +33,24 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .logo img {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       border-radius: 18px;
-      padding: 5px;
+      padding: 6px;
       background: rgba(255,255,255,0.35);
     }
 
     .logo span {
       font-size: 12px;
-      letter-spacing: 2px;
       font-weight: bold;
+      letter-spacing: 2px;
     }
 
-    /* LAYOUT */
+    /* CONTAINER PRINCIPAL */
     .container {
       display: flex;
       min-height: calc(100vh - 90px);
@@ -57,11 +58,11 @@
 
     /* TEXTO */
     .content {
-      flex: 1;
+      width: 55%;
       padding: 80px 70px;
     }
 
-    h1 {
+    .content h1 {
       font-size: 64px;
       font-weight: 800;
       margin-bottom: 20px;
@@ -69,56 +70,60 @@
 
     .subtitle {
       font-size: 26px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
-    p {
-      max-width: 700px;
-      margin-bottom: 20px;
+    .content p {
+      max-width: 720px;
       font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 22px;
     }
 
-    h2 {
+    .content h2 {
       margin-top: 50px;
       margin-bottom: 15px;
+      font-size: 24px;
     }
 
-    /* IMAGEM ATÉ O FINAL DA TELA */
+    /* ÁREA VISUAL (IMAGENS) */
     .visual {
       width: 45%;
       height: calc(100vh - 90px);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
     .visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.6s ease;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 0.8s ease;
     }
 
-    /* BOTÃO WHATSAPP */
+    /* WHATSAPP */
     .whatsapp {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 62px;
-      height: 62px;
+      bottom: 28px;
+      right: 28px;
+      padding: 15px 24px;
       background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 32px;
+      border-radius: 40px;
       color: #fff;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      z-index: 999;
-      transition: transform 0.3s ease;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .whatsapp:hover {
-      transform: scale(1.12);
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     }
 
     /* RESPONSIVO */
@@ -127,17 +132,22 @@
         flex-direction: column;
       }
 
+      .content {
+        width: 100%;
+        padding: 50px 30px;
+      }
+
       .visual {
         width: 100%;
         height: 65vh;
       }
 
-      .content {
-        padding: 50px 30px;
+      .content h1 {
+        font-size: 42px;
       }
 
-      h1 {
-        font-size: 42px;
+      .subtitle {
+        font-size: 22px;
       }
     }
   </style>
@@ -145,77 +155,81 @@
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design">
-    <span>NEWART DESIGN</span>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logonewartdesign.png" alt="NewArt Design">
+      <span>NEWART DESIGN</span>
+    </div>
+  </header>
 
-<main class="container">
+  <!-- CONTEÚDO -->
+  <main class="container">
 
-  <section class="content">
-    <h1>Artes que valorizam sua marca</h1>
-    <div class="subtitle">logotipos e designs profissionais</div>
+    <section class="content">
+      <h1>Artes que valorizam sua marca</h1>
+      <div class="subtitle">logotipos e designs profissionais</div>
 
-    <p>
-      Design criativo e profissional, desenvolvido com organização,
-      atenção aos detalhes e compromisso com prazos.
-    </p>
+      <p>
+        Design criativo e profissional, desenvolvido com organização,
+        atenção aos detalhes e compromisso com prazos.
+      </p>
 
-    <h2>Sobre a NewArt Design</h2>
-    <p>
-      A NewArt Design é uma marca criativa especializada no desenvolvimento
-      de artes visuais e identidades profissionais.
-    </p>
-    <p>
-      Cada projeto é criado com foco em qualidade, clareza visual
-      e alinhamento com a proposta do cliente.
-    </p>
+      <h2>Sobre a NewArt Design</h2>
+      <p>
+        A NewArt Design é uma marca criativa especializada no desenvolvimento
+        de artes visuais e identidades profissionais.
+      </p>
 
-    <h2>Prazo & Compromisso</h2>
-    <p>
-      Trabalhamos de forma organizada, com comunicação clara durante todo
-      o processo criativo, garantindo um resultado profissional e confiável.
-    </p>
-  </section>
+      <p>
+        Cada projeto é criado com foco em qualidade, clareza visual
+        e alinhamento com a proposta do cliente.
+      </p>
 
-  <section class="visual">
-    <img id="slider" src="amostra1.jpg" alt="Artes NewArt Design">
-  </section>
+      <h2>Prazo & Compromisso</h2>
+      <p>
+        Comunicação clara, organização e respeito aos prazos fazem parte
+        do nosso processo criativo.
+      </p>
+    </section>
 
-</main>
+    <!-- IMAGENS -->
+    <section class="visual">
+      <img id="slider" src="amostra1.jpg" alt="Portfólio NewArt Design">
+    </section>
 
-<!-- BOTÃO WHATSAPP -->
-<a
-  class="whatsapp"
-  href="https://wa.me/5575999753538"
-  target="_blank"
-  aria-label="WhatsApp"
->
-  ☎
-</a>
+  </main>
 
-<script>
-  const imagens = [
-    "amostra1.jpg",
-    "amostra2.jpg",
-    "amostra3.jpg"
-  ];
+  <!-- WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/5575999753538"
+    target="_blank"
+  >
+    💬 Falar no WhatsApp
+  </a>
 
-  let index = 0;
-  const slider = document.getElementById("slider");
+  <!-- SCRIPT SLIDER -->
+  <script>
+    const imagens = [
+      "amostra1.jpg",
+      "amostra2.jpg",
+      "amostra3.jpg"
+    ];
 
-  setInterval(() => {
-    slider.style.opacity = 0;
+    let atual = 0;
+    const slider = document.getElementById("slider");
 
-    setTimeout(() => {
-      index = (index + 1) % imagens.length;
-      slider.src = imagens[index];
-      slider.style.opacity = 1;
-    }, 600);
-  }, 3500);
-</script>
+    setInterval(() => {
+      slider.style.opacity = 0;
+
+      setTimeout(() => {
+        atual = (atual + 1) % imagens.length;
+        slider.src = imagens[atual];
+        slider.style.opacity = 1;
+      }, 600);
+    }, 3500);
+  </script>
 
 </body>
 </html>
