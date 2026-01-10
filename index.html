@@ -19,15 +19,56 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
 
 body {
-  background: #ffffff;
-  color: #1a1a1a;
   font-family: "Ruda", sans-serif;
-  font-size: clamp(1rem, 1vw, 1.1rem);
+  background: #0e0e0e;
+  color: #eaeaea;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== LOADER ===== */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#loader img {
+  width: 140px;
+  filter: brightness(0) invert(1);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: .4; }
+  50% { opacity: 1; }
+  100% { opacity: .4; }
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== TÍTULOS ===== */
@@ -41,142 +82,112 @@ h1, h2, h3, nav a, .titulo-central {
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: linear-gradient(90deg, #5a5a5a, #9c9c9c);
-  padding: 55px 70px;
+  background: linear-gradient(90deg, #1c1c1c, #2a2a2a);
+  padding: 22px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 18px;
   align-items: center;
+  z-index: 1000;
 }
 
 .logo img {
-  height: 190px;
+  height: 120px;
   filter: brightness(0) invert(1);
 }
 
-/* ===== NAV ===== */
 nav {
   display: flex;
-  gap: 60px;
+  gap: 36px;
 }
 
 nav a {
+  color: #eaeaea;
   text-decoration: none;
-  font-size: 0.95rem;
-  color: #111;
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #111;
-  transition: 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
+  font-size: .85rem;
 }
 
 /* ===== GALERIA ===== */
 .galeria {
-  max-width: 1400px;
-  margin: auto;
-  padding: 100px 60px 60px;
+  padding: 70px 22px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .galeria img {
   width: 100%;
-  height: 520px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 30px;
-  transition: transform 0.5s ease;
+  border-radius: 26px;
+  transition: transform .6s ease;
 }
 
 .galeria img:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-/* ===== TÍTULO CENTRAL ===== */
+/* ===== TÍTULO ===== */
 .titulo-central {
   text-align: center;
-  font-size: 4.8rem;
-  margin: 80px 0 120px;
+  font-size: 2.8rem;
+  margin: 80px 0;
 }
 
-/* ===== CONTEÚDO ===== */
+/* ===== SEÇÕES ===== */
 section {
-  max-width: 1150px;
-  margin: auto;
-}
-
-#inicio {
-  padding: 0 40px 160px;
+  padding: 0 22px 120px;
 }
 
 #inicio h2 {
-  font-size: 2.9rem;
-  margin-bottom: 35px;
+  font-size: 2rem;
+  margin-bottom: 26px;
 }
 
-#inicio p {
-  font-size: 1.35rem;
-  line-height: 2;
-  margin-bottom: 30px;
-  color: #444;
+#inicio p,
+.info-box p {
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  margin-bottom: 26px;
 }
 
 /* ===== INFORMAÇÕES ===== */
 #informacoes {
-  background: #f4f4f4;
-  padding: 160px 40px;
+  background: #141414;
+  padding: 140px 22px;
 }
 
 .info-box h2 {
-  font-size: 3.1rem;
-  margin-bottom: 45px;
-}
-
-.info-box p {
-  font-size: 1.35rem;
-  line-height: 2;
-  margin-bottom: 32px;
+  font-size: 2.3rem;
+  margin-bottom: 36px;
 }
 
 /* ===== CONTATO ===== */
 #contato {
-  padding: 160px 40px;
-  background: #ffffff;
+  padding: 140px 22px;
   text-align: center;
 }
 
 #contato h2 {
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   margin-bottom: 60px;
 }
 
 .contato-box {
   display: flex;
-  justify-content: center;
-  gap: 160px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
 }
 
 .contato-item {
+  background: #1a1a1a;
+  padding: 24px 30px;
+  border-radius: 22px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 28px 40px;
-  border-radius: 22px;
-  background: #f6f6f6;
-  transition: transform 0.3s ease;
+  gap: 18px;
+  transition: transform .3s ease;
 }
 
 .contato-item:hover {
@@ -184,53 +195,58 @@ section {
 }
 
 .contato-item img {
-  width: 48px;
-  height: 48px;
+  width: 42px;
 }
 
 .contato-item a {
-  font-size: 1.4rem;
+  color: #eaeaea;
   text-decoration: none;
-  color: #111;
+  font-size: 1.1rem;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #0f0f0f;
-  color: #aaa;
+  background: #000;
+  color: #777;
   text-align: center;
-  padding: 45px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  padding: 36px;
+  font-size: .85rem;
 }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
+/* ===== DESKTOP ===== */
+@media (min-width: 900px) {
+
   header {
-    flex-direction: column;
-    gap: 30px;
-    padding: 45px 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 28px 70px;
   }
 
-  .logo img {
-    height: 150px;
-  }
+  .logo img { height: 150px; }
 
   .galeria {
-    grid-template-columns: 1fr;
-    padding: 70px 30px;
+    max-width: 1400px;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 110px 60px;
   }
 
-  .galeria img {
-    height: 400px;
-  }
+  .galeria img { height: 520px; }
 
   .titulo-central {
-    font-size: 3.2rem;
+    font-size: 4.8rem;
+    margin: 120px 0;
+  }
+
+  section {
+    max-width: 1150px;
+    margin: auto;
+    padding-bottom: 180px;
   }
 
   .contato-box {
-    gap: 40px;
+    flex-direction: row;
+    gap: 160px;
   }
 }
 </style>
@@ -238,69 +254,44 @@ footer {
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logonewartdesign.png" alt="NewArt Design">
-  </div>
+<!-- LOADER -->
+<div id="loader">
+  <img src="logonewartdesign.png">
+</div>
 
+<header class="reveal">
+  <div class="logo">
+    <img src="logonewartdesign.png">
+  </div>
   <nav>
     <a href="#informacoes">Informações</a>
     <a href="#contato">Contato</a>
   </nav>
 </header>
 
-<section class="galeria">
+<section class="galeria reveal">
   <img src="amostra1.jpg">
   <img src="amostra2.jpg">
   <img src="amostra3.jpg">
 </section>
 
-<div class="titulo-central">Informações</div>
+<div class="titulo-central reveal">Informações</div>
 
-<section id="inicio">
+<section id="inicio" class="reveal">
   <h2>NewArt Design</h2>
-
-  <p>
-    A NewArt Design é um estúdio criativo especializado no desenvolvimento de identidades
-    visuais estratégicas, modernas e altamente profissionais, focadas em posicionar
-    marcas com autoridade e credibilidade.
-  </p>
-
-  <p>
-    Cada projeto é construído com base em análise, estratégia e visão estética, garantindo
-    que o design não seja apenas bonito, mas funcional, coerente e alinhado aos objetivos
-    do cliente.
-  </p>
-
-  <p>
-    Trabalhamos com processos organizados, comunicação clara e atenção máxima aos detalhes,
-    entregando soluções visuais que fortalecem marcas e geram valor real.
-  </p>
+  <p>Estúdio criativo focado em branding, identidade visual e design estratégico.</p>
+  <p>Criamos marcas com autoridade, estética e posicionamento profissional.</p>
 </section>
 
-<section id="informacoes">
+<section id="informacoes" class="reveal">
   <div class="info-box">
     <h2>Informações Detalhadas</h2>
-
-    <p>
-      Desenvolvemos identidades visuais completas, logotipos, sistemas gráficos, artes
-      para redes sociais, materiais digitais e impressos, sempre com foco em consistência
-      visual e posicionamento estratégico.
-    </p>
-
-    <p>
-      Nosso processo envolve briefing detalhado, pesquisa de mercado, estudo de referências,
-      desenvolvimento conceitual e refinamento estético até a entrega final.
-    </p>
-
-    <p>
-      Todos os projetos são exclusivos e pensados para transmitir profissionalismo,
-      originalidade e clareza na comunicação da marca.
-    </p>
+    <p>Identidade visual completa, logotipos, sistemas gráficos e artes digitais.</p>
+    <p>Processo estratégico, criativo e totalmente personalizado.</p>
   </div>
 </section>
 
-<section id="contato">
+<section id="contato" class="reveal">
   <h2>Contato</h2>
 
   <div class="contato-box">
@@ -319,6 +310,25 @@ footer {
 <footer>
   © 2026 NewArt Design — Todos os direitos reservados
 </footer>
+
+<!-- JS -->
+<script>
+/* LOADER */
+window.addEventListener("load", () => {
+  document.getElementById("loader").classList.add("hidden");
+});
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
