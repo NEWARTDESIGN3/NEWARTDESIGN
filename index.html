@@ -7,11 +7,10 @@
 
   <style>
     :root {
-      --primary: #111;
-      --secondary: #444;
+      --dark: #111;
+      --gray: #f2f2f2;
+      --text: #444;
       --accent: #25d366;
-      --bg: #ffffff;
-      --gray: #f4f4f4;
     }
 
     * {
@@ -22,91 +21,117 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--primary);
+      background: #fff;
+      color: var(--dark);
       line-height: 1.6;
     }
 
-    /* ===== WHATSAPP BUTTON ===== */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--accent);
+    /* ===== HEADER / MENU ===== */
+    header {
+      background: #2f2f2f;
       color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      padding: 15px 25px;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 28px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .logo span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: #fff;
       text-decoration: none;
-      box-shadow: 0 8px 25px rgba(0,0,0,.25);
-      z-index: 999;
+      font-size: 1rem;
+      opacity: 0.9;
     }
 
-    .whatsapp:hover {
-      transform: scale(1.05);
+    nav ul li a:hover {
+      opacity: 1;
     }
 
-    /* ===== HEADER ===== */
-    header {
-      width: 100%;
-      background: linear-gradient(90deg, #2c2c2c, #555);
-      padding: 50px 20px;
+    .phone {
+      font-weight: bold;
+      color: #25d366;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: #3a3a3a;
       color: #fff;
       text-align: center;
+      padding: 70px 20px;
     }
 
-    header h1 {
-      font-size: 2.8rem;
+    .hero h1 {
+      font-size: 2.6rem;
       margin-bottom: 15px;
     }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 850px;
       margin: auto;
       opacity: 0.95;
     }
 
-    /* ===== IMAGE SECTION ===== */
+    /* ===== IMAGE ===== */
     .image-section {
-      width: 100%;
-      padding: 60px 20px 40px;
+      padding: 60px 20px;
       display: flex;
       justify-content: center;
-      background: #fff;
     }
 
     .image-section img {
       width: 100%;
       max-width: 900px;
       height: auto;
-      object-fit: contain;
     }
 
     /* ===== CONTENT ===== */
-    .content {
+    main {
       max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
     }
 
-    .content h2 {
-      font-size: 2.3rem;
+    main h2 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
     }
 
-    .content p {
-      font-size: 1.15rem;
-      color: var(--secondary);
-      margin-bottom: 20px;
+    main p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 18px;
     }
 
-    /* ===== SECTIONS ===== */
-    .sections {
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
@@ -120,8 +145,8 @@
     }
 
     .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
     .card p {
@@ -133,28 +158,45 @@
     footer {
       background: #111;
       color: #fff;
-      padding: 40px 20px;
       text-align: center;
+      padding: 35px 20px;
       margin-top: 60px;
+      font-size: 0.95rem;
+      opacity: 0.85;
     }
 
-    footer p {
-      opacity: 0.8;
-      font-size: 0.95rem;
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,.3);
+      z-index: 999;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.05);
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+      nav ul {
+        gap: 15px;
+        margin-top: 10px;
       }
 
-      .content h2 {
-        font-size: 2rem;
-      }
-
-      .content p {
-        font-size: 1.05rem;
+      .hero h1 {
+        font-size: 2.1rem;
       }
     }
   </style>
@@ -162,69 +204,86 @@
 
 <body>
 
-  <!-- WHATSAPP -->
-  <a class="whatsapp" href="https://wa.me/5575999753538" target="_blank" aria-label="WhatsApp">
-    ☎
-  </a>
-
-  <!-- HEADER -->
-  <header>
-    <h1>NewArt Design</h1>
-    <p>
-      Estúdio criativo especializado em identidade visual, branding e soluções estratégicas
-      para marcas que desejam crescer com profissionalismo e autoridade.
-    </p>
-  </header>
-
-  <!-- IMAGE -->
-  <section class="image-section">
-    <img src="Design sem nome.png" alt="NewArt Design — Arte institucional" />
-  </section>
-
-  <!-- CONTENT -->
-  <main class="content">
-    <h2>Design estratégico para marcas que querem crescer</h2>
-    <p>
-      A NewArt Design é um estúdio criativo focado na construção de marcas fortes,
-      profissionais e bem posicionadas no mercado.
-    </p>
-    <p>
-      Desenvolvemos identidades visuais e soluções gráficas que comunicam valor,
-      credibilidade e confiança, sempre alinhadas aos objetivos estratégicos de cada cliente.
-    </p>
-
-    <div class="sections">
-      <div class="card">
-        <h3>Nosso Processo Criativo</h3>
-        <p>
-          Cada projeto começa com análise, briefing e pesquisa aprofundada.
-          Trabalhamos de forma estratégica, unindo estética, clareza visual e
-          posicionamento de marca.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Compromisso e Profissionalismo</h3>
-        <p>
-          Prezamos por organização, comunicação clara e cumprimento de prazos.
-          Nosso foco é entregar qualidade real, com atenção aos detalhes e visão de longo prazo.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Soluções Visuais</h3>
-        <p>
-          Identidade visual, logotipos, artes para redes sociais, materiais gráficos
-          e soluções criativas personalizadas para fortalecer sua marca.
-        </p>
-      </div>
+<!-- HEADER / MENU -->
+<header>
+  <div class="nav">
+    <div class="logo">
+      <img src="logo.png" alt="NewArt Design Logo">
+      <span>NewArt Design</span>
     </div>
-  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 NewArt Design — Todos os direitos reservados</p>
-  </footer>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Processo</a></li>
+        <li><a href="#">Contato</a></li>
+        <li class="phone">📞 (75) 99975-3538</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>NewArt Design</h1>
+  <p>
+    Estúdio criativo especializado em identidade visual, branding e soluções estratégicas
+    para marcas que desejam crescer com profissionalismo e autoridade.
+  </p>
+</section>
+
+<!-- IMAGE -->
+<section class="image-section">
+  <img src="Design sem nome.png" alt="NewArt Design — Arte institucional">
+</section>
+
+<!-- CONTENT -->
+<main>
+  <h2>Design estratégico para marcas que querem crescer</h2>
+  <p>
+    A NewArt Design é um estúdio criativo focado na construção de marcas fortes,
+    profissionais e bem posicionadas no mercado.
+  </p>
+  <p>
+    Desenvolvemos identidades visuais e soluções gráficas que comunicam valor,
+    credibilidade e confiança, sempre alinhadas aos objetivos estratégicos de cada cliente.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Nosso Processo Criativo</h3>
+      <p>
+        Cada projeto começa com análise, briefing e pesquisa aprofundada,
+        garantindo clareza visual e posicionamento de marca.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Compromisso e Profissionalismo</h3>
+      <p>
+        Prezamos por organização, comunicação clara e cumprimento de prazos,
+        entregando qualidade real e consistência visual.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Soluções Visuais</h3>
+      <p>
+        Identidade visual, logotipos, artes para redes sociais,
+        materiais gráficos e soluções criativas personalizadas.
+      </p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 NewArt Design — Todos os direitos reservados
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5575999753538" target="_blank">☎</a>
 
 </body>
 </html>
