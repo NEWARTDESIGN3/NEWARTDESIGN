@@ -6,10 +6,10 @@
 
 <title>NewArt Design</title>
 
-<!-- GOOGLE FONTS -->
+<!-- FONTES PROFISSIONAIS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Ruda:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 /* ===== RESET ===== */
@@ -27,8 +27,15 @@ html {
 body {
   background-color: #ffffff;
   color: #111;
-  font-family: "Inter", sans-serif;
+  font-family: "Ruda", sans-serif;
   font-size: clamp(1rem, 1vw, 1.1rem);
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2, h3, nav a, .titulo-central {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 /* ===== HEADER ===== */
@@ -55,10 +62,8 @@ nav {
 
 nav a {
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-size: 1.05rem;
   color: #111;
-  font-weight: 500;
 }
 
 /* ===== GALERIA ===== */
@@ -80,10 +85,8 @@ nav a {
 /* ===== TÍTULO CENTRAL ===== */
 .titulo-central {
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: 4.5rem;
   margin: 40px 0 100px;
-  font-weight: 500;
 }
 
 /* ===== INÍCIO ===== */
@@ -94,14 +97,12 @@ nav a {
 }
 
 #inicio h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: 2.8rem;
   margin-bottom: 30px;
-  font-weight: 500;
 }
 
 #inicio p {
-  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  font-size: 1.3rem;
   line-height: 1.9;
   margin-bottom: 26px;
   color: #444;
@@ -119,23 +120,51 @@ nav a {
 }
 
 .info-box h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-size: 3rem;
   margin-bottom: 40px;
-  font-weight: 500;
 }
 
 .info-box p {
-  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  font-size: 1.3rem;
   line-height: 1.9;
   margin-bottom: 28px;
   color: #333;
 }
 
 /* ===== CONTATO ===== */
+#contato {
+  background-color: #f3f3f3;
+  padding: 120px 40px;
+  text-align: center;
+}
+
 #contato h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.contato-box {
+  display: flex;
+  justify-content: center;
+  gap: 140px;
+  flex-wrap: wrap;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.contato-item img {
+  width: 42px;
+  height: 42px;
+}
+
+.contato-item a {
+  font-size: 1.4rem;
+  color: #111;
+  text-decoration: none;
   font-weight: 500;
 }
 
@@ -145,7 +174,7 @@ footer {
   color: #aaa;
   text-align: center;
   padding: 35px;
-  font-size: clamp(0.9rem, 1vw, 0.95rem);
+  font-size: 0.95rem;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -172,6 +201,10 @@ footer {
   .galeria img {
     height: 320px;
   }
+
+  .titulo-central {
+    font-size: 3rem;
+  }
 }
 </style>
 </head>
@@ -195,7 +228,7 @@ footer {
   <img src="amostra3.jpg" alt="Identidade visual">
 </section>
 
-<div class="titulo-central">informações</div>
+<div class="titulo-central">Informações</div>
 
 <section id="inicio">
   <h2>NewArt Design</h2>
@@ -221,61 +254,25 @@ footer {
   <div class="info-box">
     <h2>Informações Detalhadas</h2>
 
-    <p>
-      Atuamos na criação de identidades visuais completas, logotipos, artes para
-      redes sociais, materiais gráficos e layouts personalizados.
-    </p>
-
-    <p>
-      Nosso processo envolve análise estratégica, briefing detalhado, pesquisa
-      visual e desenvolvimento criativo alinhado ao posicionamento da marca.
-    </p>
-
-    <p>
-      Todas as artes são criadas de forma exclusiva, garantindo originalidade,
-      qualidade visual e coerência estética.
-    </p>
-
-    <p>
-      <strong>Valores e orçamentos:</strong><br>
-      O valor das artes varia conforme o tipo de projeto, complexidade,
-      quantidade de detalhes e demanda no período.
-    </p>
-
-    <p>
-      Projetos simples possuem valores mais acessíveis, enquanto trabalhos mais
-      elaborados, personalizados ou com prazo reduzido exigem maior investimento.
-    </p>
-
-    <p>
-      Para um orçamento preciso, entre em contato informando o tipo de arte,
-      referências desejadas e prazo.
-    </p>
+    <p>Atuamos na criação de identidades visuais completas, logotipos, artes para redes sociais, materiais gráficos e layouts personalizados.</p>
+    <p>Nosso processo envolve análise estratégica, briefing detalhado, pesquisa visual e desenvolvimento criativo.</p>
+    <p>Todas as artes são criadas de forma exclusiva, garantindo originalidade e qualidade visual.</p>
   </div>
 </section>
 
-<!-- ===== CONTATO (ALTERADO) ===== -->
-<section id="contato" style="background-color:#f3f3f3; padding:120px 40px; text-align:center;">
+<section id="contato">
   <h2>Contato</h2>
 
-  <div style="margin-top:40px; display:flex; justify-content:center; gap:120px; flex-wrap:wrap;">
-
-    <div style="display:flex; align-items:center; gap:14px;">
-      <img src="logowhatsapp.png" alt="WhatsApp" style="width:28px; height:28px;">
-      <a href="https://wa.me/5575999753538" target="_blank"
-         style="font-size:1.4rem; color:#111; text-decoration:none; font-weight:500;">
-        +55 75 99975-3538
-      </a>
+  <div class="contato-box">
+    <div class="contato-item">
+      <img src="logowhatsapp.png" alt="WhatsApp">
+      <a href="https://wa.me/5575999753538" target="_blank">+55 75 99975-3538</a>
     </div>
 
-    <div style="display:flex; align-items:center; gap:14px;">
-      <img src="logoinstagram1.png" alt="Instagram" style="width:28px; height:28px;">
-      <a href="https://instagram.com/newartdesign2026" target="_blank"
-         style="font-size:1.4rem; color:#111; text-decoration:none; font-weight:500;">
-        @newartdesign2026
-      </a>
+    <div class="contato-item">
+      <img src="logoinstagram.png" alt="Instagram">
+      <a href="https://instagram.com/newartdesign2026" target="_blank">@newartdesign2026</a>
     </div>
-
   </div>
 </section>
 
