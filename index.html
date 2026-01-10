@@ -2,278 +2,363 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>NewArt Design</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>NewArt Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ================= VARIÁVEIS ================= */
 :root{
   --bg:#ffffff;
   --text:#111;
   --muted:#555;
   --card:#f2f2f2;
 }
+
 body.dark{
-  --bg:#0d0d0d;
-  --text:#f5f5f5;
+  --bg:#0f0f0f;
+  --text:#ffffff;
   --muted:#aaa;
   --card:#1a1a1a;
 }
 
-/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+
 body{
+  font-family:Inter, sans-serif;
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter',sans-serif;
   transition:.4s;
 }
 
-/* ================= HEADER ================= */
-header{
-  width:100%;
-  border-bottom:1px solid rgba(0,0,0,.1);
-}
-body.dark header{
-  border-color:rgba(255,255,255,.1);
+/* LOADER */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Archivo Black';
+  font-size:32px;
+  z-index:9999;
 }
 
-.topbar{
-  max-width:1400px;
-  margin:auto;
-  padding:20px 40px;
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:var(--bg);
+  padding:18px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-bottom:1px solid rgba(0,0,0,.05);
+  z-index:100;
 }
 
-/* LOGO */
-.logo img{
-  height:60px;
+.logo{
+  height:42px;
 }
 
-/* NAV */
 nav{
   display:flex;
-  gap:28px;
+  gap:20px;
   align-items:center;
 }
+
 nav a{
   text-decoration:none;
   color:var(--text);
   font-size:15px;
 }
+
 .toggle{
   cursor:pointer;
-  padding:8px 18px;
-  border-radius:30px;
-  border:1px solid var(--text);
-  font-size:14px;
+  font-size:20px;
 }
 
-/* ================= AMOSTRAS (IMAGENS GRANDES) ================= */
-.samples{
-  max-width:1400px;
-  margin:40px auto 0;
-  padding:0 40px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-.samples img{
-  width:100%;
-  height:380px;
-  object-fit:cover;
-  border-radius:28px;
-  transition:.4s;
-}
-.samples img:hover{
-  transform:scale(1.04);
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
-  max-width:1200px;
-  margin:120px auto;
-  padding:0 40px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:140px 20px 80px;
 }
+
 .hero h1{
   font-family:'Archivo Black';
-  font-size:clamp(42px,6vw,78px);
-  letter-spacing:2px;
+  font-size:56px;
+  margin-bottom:20px;
 }
+
 .hero p{
-  margin-top:30px;
-  font-size:20px;
+  max-width:800px;
+  font-size:22px;
   line-height:2;
   color:var(--muted);
 }
 
-/* SOCIAL */
-.social{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-}
-.social img{
-  width:46px;
-}
-
-/* ================= SEÇÕES ================= */
+/* SECTIONS */
 section{
   max-width:1200px;
   margin:140px auto;
   padding:0 40px;
 }
+
 section h2{
   font-family:'Archivo Black';
-  font-size:36px;
-  margin-bottom:40px;
+  font-size:42px;
+  margin-bottom:30px;
 }
+
 section p{
-  font-size:19px;
-  line-height:2.1;
-  margin-bottom:28px;
+  font-size:20px;
+  line-height:2;
   color:var(--muted);
 }
 
-/* ================= GRID ================= */
-.grid{
+/* IMAGENS */
+.gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:60px;
 }
+
+.gallery img{
+  width:100%;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
+
 .card{
   background:var(--card);
   padding:40px;
-  border-radius:28px;
+  border-radius:30px;
   transition:.4s;
 }
+
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 30px 60px rgba(0,0,0,.15);
 }
 
-/* ================= DARK MAGIC (COR DINÂMICA) ================= */
-body.dark .dynamic{
-  filter:invert(1) brightness(1.1);
+/* PREÇOS */
+.price{
+  margin-top:30px;
+  font-size:18px;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  padding:60px 20px;
+/* CONTATO FINAL */
+.contact-final{
+  margin:160px auto 120px;
   text-align:center;
+}
+
+.contact-final h2{
+  font-family:'Archivo Black';
+  font-size:42px;
+}
+
+.contact-final p{
+  font-size:20px;
+  max-width:800px;
+  margin:30px auto 60px;
+  line-height:2;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.contact-btn{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:22px 36px;
+  border-radius:60px;
+  background:var(--card);
+  text-decoration:none;
+  color:var(--text);
+  font-size:18px;
+  transition:.4s;
+}
+
+.contact-btn img{
+  width:34px;
+}
+
+.contact-btn:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(0,0,0,.2);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
   font-size:14px;
   color:var(--muted);
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  .samples{grid-template-columns:1fr}
-  nav a{display:none}
+/* ANIMAÇÃO SCROLL */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{font-size:42px}
+  section h2{font-size:34px}
 }
 </style>
 </head>
 
 <body>
 
+<div id="loader">NEWART DESIGN</div>
+
 <header>
-  <div class="topbar">
-    <div class="logo">
-      <img src="logonewartdesign.png" class="dynamic">
-    </div>
+  <img src="logonewartdesign.png" class="logo dynamic">
 
-    <nav>
-      <a href="#visao">Visão Geral</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#precos">Preços</a>
-      <span class="toggle" onclick="toggleTheme()">Light / Dark</span>
-    </nav>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#precos">Preços</a>
+    <a href="#contato">Contato</a>
+    <span class="toggle" onclick="toggleTheme()">🌙</span>
+  </nav>
+</header>
+
+<div class="hero reveal">
+  <div>
+    <h1>NEWART DESIGN</h1>
+    <p>
+      Estúdio criativo focado em branding, identidade visual, design gráfico
+      estratégico e posicionamento profissional de marcas no ambiente digital.
+    </p>
   </div>
+</div>
 
-  <div class="samples">
+<section id="sobre" class="reveal">
+  <h2>Visão Geral</h2>
+  <p>
+    A NewArt Design nasceu com o propósito de criar identidades visuais
+    sólidas, modernas e estratégicas. Cada projeto é desenvolvido com
+    estudo profundo de marca, público-alvo, conceito visual e impacto.
+  </p>
+</section>
+
+<section class="reveal">
+  <div class="gallery">
     <img src="amostra1.jpg">
     <img src="amostra2.jpg">
     <img src="amostra3.jpg">
   </div>
-</header>
-
-<div class="hero">
-  <h1>NewArt Design</h1>
-  <p>
-    Estúdio criativo especializado em branding estratégico, identidade visual profissional
-    e posicionamento de marcas. Criamos soluções visuais sólidas, modernas e altamente
-    profissionais para empresas, empreendedores e marcas pessoais que buscam autoridade.
-  </p>
-
-  <div class="social">
-    <img src="logoinstagram1.png" class="dynamic">
-    <img src="logowhatsapp.png" class="dynamic">
-  </div>
-</div>
-
-<section id="visao">
-  <h2>Visão Geral</h2>
-  <p>
-    A NewArt Design nasce com o propósito de transformar ideias em marcas fortes,
-    reconhecíveis e estratégicas. Nosso foco está na construção de identidades visuais
-    que comuniquem profissionalismo, confiança e posicionamento claro no mercado.
-  </p>
-  <p>
-    Cada projeto é desenvolvido com estudo, pesquisa e estratégia visual, garantindo
-    coerência estética e impacto visual consistente em todos os pontos de contato da marca.
-  </p>
 </section>
 
-<section id="servicos">
+<section id="servicos" class="reveal">
   <h2>O Que Fazemos</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Branding Estratégico</h3>
-      <p>Criação e posicionamento de marcas com foco em autoridade e diferenciação.</p>
-    </div>
+  <div class="cards">
     <div class="card">
       <h3>Identidade Visual</h3>
-      <p>Logotipos, paleta de cores, tipografia e aplicações profissionais.</p>
+      <p>Logotipos profissionais, paleta de cores, tipografia e aplicação visual.</p>
     </div>
     <div class="card">
-      <h3>Artes Criativas</h3>
-      <p>Design para redes sociais, campanhas, materiais gráficos e digitais.</p>
+      <h3>Design Digital</h3>
+      <p>Artes para redes sociais, anúncios, banners e materiais digitais.</p>
+    </div>
+    <div class="card">
+      <h3>Branding Estratégico</h3>
+      <p>Posicionamento, identidade e comunicação visual consistente.</p>
     </div>
   </div>
 </section>
 
-<section id="precos">
-  <h2>Preços e Orçamentos</h2>
-  <p>
-    Os valores dos serviços variam de acordo com o tipo de arte, complexidade do projeto,
-    nível de personalização, prazo e demanda criativa.
+<section id="precos" class="reveal">
+  <h2>Preços</h2>
+  <p class="price">
+    Os valores dos projetos variam de acordo com a complexidade da arte,
+    quantidade de materiais, tempo de desenvolvimento e nível de personalização.
+    Cada orçamento é feito de forma individual, garantindo exclusividade
+    e qualidade profissional.
   </p>
+</section>
+
+<section id="contato" class="contact-final reveal">
+  <h2>Vamos Criar Algo Incrível</h2>
   <p>
-    Projetos mais simples possuem investimento mais acessível, enquanto identidades
-    completas e artes estratégicas exigem maior dedicação, estudo e desenvolvimento,
-    refletindo diretamente no valor final.
+    Entre em contato para solicitar um orçamento, tirar dúvidas ou iniciar
+    um projeto criativo totalmente personalizado.
   </p>
-  <p>
-    Para um orçamento preciso, é necessário informar o tipo de serviço desejado,
-    referências visuais e prazo estimado.
-  </p>
+
+  <div class="contact-buttons">
+    <a href="https://wa.me/SEUNUMERO" class="contact-btn" target="_blank">
+      <img src="logowhatsapp.png" class="dynamic"> WhatsApp
+    </a>
+    <a href="https://instagram.com/SEUINSTAGRAM" class="contact-btn" target="_blank">
+      <img src="logoinstagram1.png" class="dynamic"> Instagram
+    </a>
+  </div>
 </section>
 
 <footer>
-© 2026 NewArt Design — Todos os direitos reservados
+  © 2026 NewArt Design — Todos os direitos reservados
 </footer>
 
 <script>
-function toggleTheme(){
-  document.body.classList.toggle("dark");
+/* LOADER */
+window.onload = () => {
+  setTimeout(()=>document.getElementById('loader').style.display='none',800);
 }
+
+/* DARK / LIGHT */
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  document.querySelectorAll('.dynamic').forEach(img=>{
+    img.style.filter = document.body.classList.contains('dark')
+      ? 'invert(1)'
+      : 'invert(0)';
+  });
+}
+
+/* SCROLL ANIMATION */
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 80){
+      el.classList.add('active');
+    }
+  });
+});
 </script>
 
 </body>
