@@ -37,9 +37,9 @@
     }
 
     .logo img {
-      width: 68px;
-      height: 68px;
-      border-radius: 20px;
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
       padding: 6px;
       background: rgba(255,255,255,0.35);
     }
@@ -59,11 +59,11 @@
     /* TEXTO */
     .content {
       width: 55%;
-      padding: 100px 90px;
+      padding: 110px 90px;
     }
 
     .content h1 {
-      font-size: 82px;
+      font-size: 80px;
       font-weight: 900;
       line-height: 1.05;
       margin-bottom: 36px;
@@ -89,21 +89,23 @@
       font-size: 32px;
     }
 
-    /* ÁREA VISUAL */
+    /* ÁREA VISUAL (IMAGENS) */
     .visual {
       width: 45%;
-      height: calc(100vh - 90px);
+      min-height: calc(100vh - 90px);
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 70px;
+      padding-top: 120px; /* desce a imagem */
+      overflow: hidden;
     }
 
     .visual img {
-      max-width: 130%;
-      max-height: 130%;
+      width: 100%;
+      max-width: 560px;
+      height: auto;
       object-fit: contain;
-      transition: opacity 0.9s ease;
+      transition: opacity 0.8s ease;
     }
 
     /* WHATSAPP */
@@ -111,12 +113,12 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      padding: 18px 30px;
+      padding: 18px 32px;
       background: #25d366;
-      border-radius: 45px;
+      border-radius: 50px;
       color: #fff;
       text-decoration: none;
-      font-size: 21px;
+      font-size: 20px;
       font-weight: bold;
       box-shadow: 0 12px 30px rgba(0,0,0,0.3);
       z-index: 9999;
@@ -152,13 +154,12 @@
 
       .visual {
         width: 100%;
-        height: 70vh;
-        padding-top: 30px;
+        min-height: 65vh;
+        padding-top: 40px;
       }
 
       .visual img {
-        max-width: 115%;
-        max-height: 115%;
+        max-width: 90%;
       }
     }
   </style>
@@ -186,29 +187,27 @@
     </div>
 
     <p>
-      A <strong>NewArt Design</strong> é um estúdio criativo focado no desenvolvimento
-      de soluções visuais profissionais, modernas e estrategicamente pensadas
-      para fortalecer marcas no mercado.
+      A <strong>NewArt Design</strong> é um estúdio criativo especializado
+      no desenvolvimento de soluções visuais profissionais, modernas
+      e estrategicamente pensadas para fortalecer marcas.
     </p>
 
     <p>
-      Cada projeto é criado com atenção total aos detalhes, alinhando estética,
-      clareza visual e posicionamento de marca, garantindo um resultado forte,
-      confiável e impactante.
+      Cada projeto é criado com foco total em qualidade, clareza visual
+      e posicionamento de mercado, garantindo resultados consistentes,
+      profissionais e visualmente impactantes.
     </p>
 
     <h2>Nosso Processo</h2>
     <p>
-      Trabalhamos com um processo organizado, transparente e eficiente.
-      Desde o briefing inicial até a entrega final, tudo é feito com
-      planejamento, comunicação clara e foco em qualidade.
+      Trabalhamos com planejamento, organização e comunicação clara
+      desde o primeiro contato até a entrega final do projeto.
     </p>
 
-    <h2>Compromisso Profissional</h2>
+    <h2>Compromisso com Resultados</h2>
     <p>
-      Cumprimos prazos, mantemos um alto padrão visual e oferecemos suporte
-      durante todo o desenvolvimento do projeto, garantindo a satisfação
-      de cada cliente.
+      Cumprimos prazos, respeitamos o briefing e mantemos um alto padrão
+      visual em todos os projetos desenvolvidos.
     </p>
 
     <h2>Serviços</h2>
@@ -217,7 +216,7 @@
       • Identidade visual completa<br>
       • Artes para redes sociais<br>
       • Designs personalizados<br>
-      • Projetos criativos sob medida
+      • Projetos criativos sob demanda
     </p>
   </section>
 
@@ -252,7 +251,7 @@
       atual = (atual + 1) % imagens.length;
       slider.src = imagens[atual];
       slider.style.opacity = 1;
-    }, 700);
+    }, 600);
   }, 4000);
 </script>
 
