@@ -9,9 +9,9 @@
   <meta http-equiv="Referrer-Policy" content="no-referrer">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()">
 
-  <!-- SEO BÁSICO -->
+  <!-- SEO -->
   <title>NewArt Design | Design Profissional</title>
-  <meta name="description" content="NewArt Design é uma marca criativa focada em design profissional, identidade visual e compromisso com prazos.">
+  <meta name="description" content="Identidade visual, logotipos e design profissional com criatividade e compromisso.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -28,7 +28,7 @@
       line-height: 1.6;
     }
 
-    /* TOPO */
+    /* HEADER */
     header {
       height: 90px;
       background: linear-gradient(90deg, #7a5cff, #6fd3e0);
@@ -38,17 +38,27 @@
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 55px;
+      height: auto;
+      border-radius: 14px;
+      object-fit: cover;
+      background: rgba(255,255,255,0.3);
+      padding: 4px;
     }
 
     .logo span {
-      display: block;
       font-size: 12px;
       letter-spacing: 2px;
+      font-weight: bold;
     }
 
-    /* CONTEÚDO */
+    /* MAIN */
     main {
       display: flex;
       justify-content: space-between;
@@ -63,14 +73,14 @@
     }
 
     .texto h1 {
-      font-size: 82px;
+      font-size: clamp(42px, 6vw, 82px);
       font-weight: 800;
       line-height: 1;
     }
 
     .texto h1 span {
       display: block;
-      font-size: 42px;
+      font-size: clamp(22px, 4vw, 42px);
       font-weight: 400;
       margin-top: 10px;
     }
@@ -125,31 +135,24 @@
       transform: scale(1.05);
     }
 
-    /* CARD */
+    /* CARD / SLIDER */
     .card {
       width: 340px;
       height: 440px;
-      background: #8cc9e8;
       border-radius: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 500;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .card.fade {
+      opacity: 0;
     }
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
       main {
         padding: 35px;
-      }
-
-      .texto h1 {
-        font-size: 56px;
-      }
-
-      .texto h1 span {
-        font-size: 28px;
       }
 
       .card {
@@ -164,7 +167,7 @@
 
 <header>
   <div class="logo">
-    NA
+    <img src="logonewartdesign.png" alt="NewArt Design - Logotipo">
     <span>NEWART DESIGN</span>
   </div>
 </header>
@@ -172,7 +175,6 @@
 <main>
 
   <div class="texto">
-
     <h1>
       Artes que valorizam sua marca
       <span>logotipos e designs profissionais</span>
@@ -186,22 +188,7 @@
       <h2>Sobre a NewArt Design</h2>
       <p>
         A <strong>NewArt Design</strong> é uma marca criativa especializada no desenvolvimento de artes visuais
-        e identidades profissionais. Cada projeto é criado com foco em qualidade, clareza visual
-        e alinhamento com a proposta do cliente.
-      </p>
-
-      <p>
-        Trabalhamos de forma organizada, com comunicação clara durante todo o processo criativo,
-        garantindo um resultado profissional e confiável.
-      </p>
-    </section>
-
-    <section>
-      <h2>Prazo & Compromisso</h2>
-      <p>
-        Prezamos pelo <strong>cumprimento de prazos</strong>, responsabilidade e transparência em todas as etapas.
-        Antes do início de qualquer projeto, alinhamos expectativas, referências e tempo de entrega,
-        garantindo segurança e eficiência.
+        e identidades profissionais.
       </p>
     </section>
 
@@ -212,24 +199,44 @@
         <li>Identidade visual</li>
         <li>Artes para redes sociais</li>
         <li>Designs personalizados</li>
-        <li>Projetos criativos sob demanda</li>
       </ul>
     </section>
 
     <a class="whatsapp"
-       href="https://wa.me/5575999753538?text=Olá,%20vim%20pelo%20site%20da%20NewArt%20Design"
+       href="https://wa.me/5575999753538"
        target="_blank"
        rel="noopener noreferrer">
       💬 Falar no WhatsApp
     </a>
-
   </div>
 
-  <div class="card">
-    Espaço para imagem
-  </div>
+  <div class="card" id="art-slider"></div>
 
 </main>
+
+<script>
+  const images = [
+    "amostra1.jpg",
+    "amostra2.jpg",
+    "amostra3.jpg"
+  ];
+
+  let currentIndex = 0;
+  const card = document.getElementById("art-slider");
+
+  card.style.backgroundImage = `url(${images[0]})`;
+
+  setInterval(() => {
+    card.classList.add("fade");
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      card.style.backgroundImage = `url(${images[currentIndex]})`;
+      card.classList.remove("fade");
+    }, 800);
+
+  }, 3500);
+</script>
 
 </body>
 </html>
