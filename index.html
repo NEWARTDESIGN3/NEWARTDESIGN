@@ -2,17 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-
-  <!-- SEGURANÇA BÁSICA -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Referrer-Policy" content="no-referrer">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()">
-
-  <!-- SEO -->
-  <title>NewArt Design | Design Profissional</title>
-  <meta name="description" content="Identidade visual, logotipos e design profissional com criatividade e compromisso.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NewArt Design | Design Profissional</title>
+  <meta name="description" content="NewArt Design - identidade visual, logotipos e artes profissionais.">
 
   <style>
     * {
@@ -45,11 +38,9 @@
 
     .logo img {
       width: 55px;
-      height: auto;
       border-radius: 14px;
-      object-fit: cover;
-      background: rgba(255,255,255,0.3);
       padding: 4px;
+      background: rgba(255,255,255,0.3);
     }
 
     .logo span {
@@ -88,7 +79,6 @@
     .subtitulo {
       margin-top: 25px;
       font-size: 20px;
-      font-weight: 500;
     }
 
     section {
@@ -135,7 +125,7 @@
       transform: scale(1.05);
     }
 
-    /* CARD / SLIDER */
+    /* SLIDER */
     .card {
       width: 340px;
       height: 440px;
@@ -181,14 +171,19 @@
     </h1>
 
     <p class="subtitulo">
-      Design criativo e profissional, desenvolvido com organização, atenção aos detalhes e compromisso com prazos.
+      Design criativo e profissional, desenvolvido com organização,
+      atenção aos detalhes e compromisso com prazos.
     </p>
 
     <section>
       <h2>Sobre a NewArt Design</h2>
       <p>
-        A <strong>NewArt Design</strong> é uma marca criativa especializada no desenvolvimento de artes visuais
-        e identidades profissionais.
+        A <strong>NewArt Design</strong> é uma marca criativa especializada
+        no desenvolvimento de artes visuais e identidades profissionais.
+      </p>
+      <p>
+        Trabalhamos de forma organizada e com comunicação clara,
+        garantindo resultados profissionais e confiáveis.
       </p>
     </section>
 
@@ -221,18 +216,18 @@
     "amostra3.jpg"
   ];
 
-  let currentIndex = 0;
-  const card = document.getElementById("art-slider");
+  let index = 0;
+  const slider = document.getElementById("art-slider");
 
-  card.style.backgroundImage = `url(${images[0]})`;
+  slider.style.backgroundImage = `url(${images[0]})`;
 
   setInterval(() => {
-    card.classList.add("fade");
+    slider.classList.add("fade");
 
     setTimeout(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      card.style.backgroundImage = `url(${images[currentIndex]})`;
-      card.classList.remove("fade");
+      index = (index + 1) % images.length;
+      slider.style.backgroundImage = `url(${images[index]})`;
+      slider.classList.remove("fade");
     }, 800);
 
   }, 3500);
